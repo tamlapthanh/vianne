@@ -2,7 +2,7 @@
     "name": "English ",
     "short_name": "English ",
     "description": "EnglishWeb App.",
-    "start_url": "login.html",
+    "start_url": "index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#0000ff",
@@ -19,4 +19,3 @@
       }
     ]
   }
-  

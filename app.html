@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viance 4/7 1.0.0</title>
+    <link rel="manifest" href="./assets/manifest-BDiz6hGs.json" />
+    <link rel="shortcut icon" type="image/png" href="./assets/favicon-CiX55uzs.png" />
+    <script type="module" crossorigin src="./assets/app-iGyxNjgW.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/auth-service-DI2mr-uW.js">
+    <link rel="modulepreload" crossorigin href="./assets/konva-BoNnv-Ev.js">
+    <link rel="stylesheet" crossorigin href="./assets/auth-service-BnfOAV0J.css">
+    <link rel="stylesheet" crossorigin href="./assets/app-CL-YoWZ8.css">
+  </head>
+
+  <body>
+    <div id="canvas-container">
+      <div class="toast-container position-fixed top-50 start-50 translate-middle" ></div>
+
+      <!-- Loading Spinner Overlay -->
+      <div class="overlay" id="spinnerOverlay"> <span class="spinner-icon" role="status" aria-label="Loading"></span> </div>
+
+      <!-- Loading Spinner Overlay -->
+      <div class="overlay-async" id="spinnerOverlay_async_id"> <span class="spinner-icon" role="status" aria-label="Loading"></span> </div>
+
+      <div id="countdown-overlay"></div>
+
+      <div id="canvas"></div>
+
+      <nav id="id_controls" class="controls" aria-label="Canvas tools">
+        <div class="group-controls content-group">
+          <button class="btn btn-primary toggle-btn" aria-label="Content tools" title="Content"><i class="bi bi-chat-square-dots"></i><span>Content</span></button>
+          <button id="add-text-btn" class="btn btn-light" aria-label="Add text" title="Add text"><i class="bi bi-chat-square-dots"></i><span>Add Text</span></button>
+          <button id="add-rect-btn" class="btn btn-light" aria-label="Add rectangle" title="Add rectangle"><i class="bi bi-bounding-box"></i><span>Add Rect</span></button>
+        </div>
+
+        <div class="group-controls draw-group">
+          <button class="btn btn-primary toggle-btn" aria-label="Drawing tools" title="Draw"><i class="bi bi-brush-fill"></i><span>Draw</span></button>
+          <button id="draw-btn" class="btn btn-dark" aria-label="Start drawing" title="Start drawing"><i class="bi bi-brush-fill"></i><span>Start</span></button>
+          <button id="undo-btn" class="btn btn-light" aria-label="Undo last line" title="Undo"><i class="bi bi-arrow-counterclockwise"></i><span>Undo</span></button>
+          <button id="redo-btn" class="btn btn-light" aria-label="Redo last change" title="Redo"><i class="bi bi-arrow-repeat"></i><span>Redo</span></button>
+          <button id="delete-line-btn" class="btn btn-light" aria-label="Delete selected line" title="Delete line"><i class="bi bi-trash"></i><span>Delete</span></button>
+          <button id="clear-page-btn" class="btn btn-light" aria-label="Clear page" title="Clear page"><i class="bi bi-x-circle"></i><span>Clear</span></button>
+          <button id="send-json" class="btn btn-light" aria-label="Save drawing" title="Save"><i class="bi bi-cloud-arrow-up-fill"></i><span>Save</span></button>
+        </div>
+
+        <div class="group-controls zoom-group">
+          <button class="btn btn-primary toggle-btn" aria-label="View tools" title="View"><i class="bi bi-arrows-fullscreen"></i><span>View</span></button>
+          <button id="zoom-in" class="btn btn-light" aria-label="Zoom in" title="Zoom in"><i class="bi bi-zoom-in"></i><span>Zoom In</span></button>
+          <button id="zoom-out" class="btn btn-light" aria-label="Zoom out" title="Zoom out"><i class="bi bi-zoom-out"></i><span>Zoom Out</span></button>
+          <button id="reset-zoom" class="btn btn-light" aria-label="Fit page" title="Fit page"><i class="bi bi-fullscreen"></i><span>Fit Page</span></button>
+          <button id="snap-btn" class="btn btn-light snap-toggle" aria-label="Alignment snap off" title="Alignment snap off"><i class="bi bi-bounding-box"></i><span>Snap Off</span></button>
+          <button id="lock-btn" class="btn btn-light" aria-label="Lock canvas" title="Lock canvas"><i id="lock-icon" class="bi bi-lock-fill"></i><span>Lock</span></button>
+        </div>
+
+        <div class="group-controls media-group">
+          <button class="btn btn-primary toggle-btn" aria-label="Media tools" title="Media"><i class="bi bi-play-btn"></i><span>Media</span></button>
+          <button id="id_ShowPanel" class="btn btn-light" aria-label="Show media panel" title="Media panel"><i class="bi bi-music-player-fill"></i><span>Panel</span></button>
+          <button id="auto-play-btn" class="btn btn-light" aria-label="Toggle autoplay" title="Autoplay"><i class="bi bi-play-btn"></i><span>Autoplay</span></button>
+          <button id="show-vocabulary-btn" class="btn btn-light" aria-label="Show vocabulary" title="Vocabulary"><i class="bi bi-collection-play-fill"></i><span>Vocabulary</span></button>
+        </div>
+
+        <div class="group-controls more-group">
+          <button id="setting" class="btn btn-primary toggle-btn" aria-label="More options" title="More"><i class="bi bi-gear"></i><span>More</span></button>
+          <button id="settings-open" class="btn btn-light" data-modal-target="#settingsModal" aria-label="Choose lesson or page" title="Lessons"><i class="bi bi-list-ol"></i><span>Lessons</span></button>
+          <button id="shortcuts-open" class="btn btn-light" data-modal-target="#shortcutsModal" aria-label="Show keyboard shortcuts" title="Shortcuts"><i class="bi bi-list-ol"></i><span>Shortcuts</span></button>
+          <button id="logout" class="btn btn-light text-danger" aria-label="Log out" title="Log out"><i class="bi bi-box-arrow-left"></i><span>Logout</span></button>
+        </div>
+      </nav>
+      <button id="toolbar-dock-toggle" class="btn btn-primary toolbar-dock-toggle" type="button"
+        aria-label="Hide canvas tools" aria-controls="id_controls" aria-expanded="true" title="Hide tools">
+        <i class="bi bi-gear"></i><span>Tools</span>
+      </button>
+      <div id="toolbar-status" class="toolbar-status" aria-live="polite">
+        <span id="active-tool-status" hidden>Ready</span><span id="zoom-status">100%</span>
+        <button id="save-status" type="button" class="is-saved" aria-label="Canvas is saved" disabled>Saved</button>
+      </div>
+    </div>
+
+    <!-- New Buttons with Icons -->
+    <div class="page-navigation" aria-label="Page navigation">
+      <button id="previous_page" class="btn btn-info side-btn" aria-label="Previous page">
+        <i class="bi bi-chevron-right nav-chevron-up"></i>
+      </button>
+      <span class="side-page-number" id="page-number">1 / 1</span>
+      <button id="next_page" class="btn btn-info side-btn" aria-label="Next page">
+        <i class="bi bi-chevron-right nav-chevron-down"></i>
+      </button>
+    </div>
+
+    <!-- Settings Modal -->
+    <div
+      class="modal fade"
+      id="settingsModal"
+      tabindex="-1"
+      aria-labelledby="settingsModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-fluid">
+        <!-- Thêm modal-fluid -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="settingsModalLabel"> Jump to which page? </h3>
+            <button type="button" class="btn-close" data-modal-dismiss aria-label="Close" ></button>
+          </div>
+          <div class="modal-body">
+            <div class="container mt-2">
+              <div
+                class="d-flex flex-wrap align-items-center"
+                id="radioContainer"
+              >
+                <!-- radios here-->
+              </div>
+            </div>
+
+            <!-- <hr class="my-4 border border-primary" /> -->
+            <div class="input-group flex-nowrap">
+              <select id="json-dropdown" class="form-select"></select>
+            </div>
+
+            <!-- <hr class="my-4 border border-primary" /> -->
+            <div class="range-container">
+              <label for="range2" class="form-label">Stroke Width</label>
+              <input type="range" class="form-range" id="id_line_stroke_width" min="1" max="9" step="1" value="3" />
+              <div class="range-labels">
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+                <span>7</span>
+                <span>8</span>
+                <span>9</span>
+              </div>
+            </div>
+
+            <!-- <hr class="my-4 border border-primary" /> -->
+            <div class="range-container">
+              <label for="select_color" class="form-label" >Select Color: </label>
+              <input type="text" class="coloris instance1" value="Tomato" data-target="window" />
+            </div>
+
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="showTwoOrOnePage" checked>
+              <label class="form-check-label" for="showTwoOrOnePage">Show two pages</label>
+            </div>         
+
+            <br />
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" id="id_reset_app_data" data-modal-dismiss > Reset </button>
+              <button type="button" class="btn btn-primary" data-modal-dismiss > Close </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="shortcutsModal" tabindex="-1" aria-labelledby="shortcutsModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="shortcutsModalLabel">Keyboard shortcuts</h3>
+            <button type="button" class="btn-close" data-modal-dismiss aria-label="Close"></button>
+          </div>
+          <div class="modal-body shortcut-list">
+            <div><kbd>T</kbd><span>Add Text</span></div>
+            <div><kbd>R</kbd><span>Add Rectangle</span></div>
+            <div><kbd>D</kbd><span>Start/finish Drawing</span></div>
+            <div><span><kbd>Ctrl</kbd> + <kbd>Z</kbd></span><span>Undo</span></div>
+            <div><span><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd></span><span>Redo</span></div>
+            <div><kbd>Delete</kbd><span>Delete selected Line</span></div>
+            <div><span><kbd>←</kbd> / <kbd>→</kbd></span><span>Previous/Next page</span></div>
+            <div><kbd>Esc</kbd><span>Close active tools</span></div>
+          </div>
+          <div class="modal-footer"><button type="button" class="btn btn-primary" data-modal-dismiss>Close</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="tooltip"
+      style="
+        position: absolute;
+        padding: 6px 10px;
+        background: rgba(30, 30, 30, 0.75);
+        backdrop-filter: blur(6px);
+        color: #fff;
+        border-radius: 6px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        pointer-events: none;
+        display: none;
+        font-size: 14px;
+        line-height: 1.4;
+        z-index: 1000;
+        transition: opacity 0.15s ease;
+        opacity: 0;
+      "
+    ></div>
+
+
+    
+    
+  </body>
+</html>

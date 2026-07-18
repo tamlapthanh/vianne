@@ -1,0 +1,45 @@
+.bi {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  background-color: currentColor;
+  -webkit-mask: var(--bi-icon) center / contain no-repeat;
+  mask: var(--bi-icon) center / contain no-repeat;
+}
+
+.bi-arrow-counterclockwise { --bi-icon: url("./icons/arrow-counterclockwise.svg"); }
+.bi-arrow-repeat { --bi-icon: url("./icons/arrow-repeat.svg"); }
+.bi-arrows-fullscreen { --bi-icon: url("./icons/arrows-fullscreen.svg"); }
+.bi-bounding-box { --bi-icon: url("./icons/bounding-box.svg"); }
+.bi-box-arrow-left { --bi-icon: url("./icons/box-arrow-left.svg"); }
+.bi-brush-fill { --bi-icon: url("./icons/brush-fill.svg"); }
+.bi-chat-square-dots { --bi-icon: url("./icons/chat-square-dots.svg"); }
+.bi-chat-square-text { --bi-icon: url("./icons/chat-square-text.svg"); }
+.bi-chat-square-text-fill { --bi-icon: url("./icons/chat-square-text-fill.svg"); }
+.bi-chevron-left { --bi-icon: url("./icons/chevron-left.svg"); }
+.bi-chevron-right { --bi-icon: url("./icons/chevron-right.svg"); }
+.bi-cloud-arrow-up-fill { --bi-icon: url("./icons/cloud-arrow-up-fill.svg"); }
+.bi-collection-play-fill { --bi-icon: url("./icons/collection-play-fill.svg"); }
+.bi-fullscreen { --bi-icon: url("./icons/fullscreen.svg"); }
+.bi-gear { --bi-icon: url("./icons/gear.svg"); }
+.bi-hand-index { --bi-icon: url("./icons/hand-index.svg"); }
+.bi-list-ol { --bi-icon: url("./icons/list-ol.svg"); }
+.bi-lock-fill { --bi-icon: url("./icons/lock-fill.svg"); }
+.bi-music-player-fill { --bi-icon: url("./icons/music-player-fill.svg"); }
+.bi-palette-fill { --bi-icon: url("./icons/palette-fill.svg"); }
+.bi-pause-btn { --bi-icon: url("./icons/pause-btn.svg"); }
+.bi-pause-fill { --bi-icon: url("./icons/pause-fill.svg"); }
+.bi-play-btn { --bi-icon: url("./icons/play-btn.svg"); }
+.bi-play-circle-fill { --bi-icon: url("./icons/play-circle-fill.svg"); }
+.bi-play-fill { --bi-icon: url("./icons/play-fill.svg"); }
+.bi-speedometer { --bi-icon: url("./icons/speedometer.svg"); }
+.bi-stop-fill { --bi-icon: url("./icons/stop-fill.svg"); }
+.bi-trash { --bi-icon: url("./icons/trash.svg"); }
+.bi-trash3 { --bi-icon: url("./icons/trash3.svg"); }
+.bi-unlock-fill { --bi-icon: url("./icons/unlock-fill.svg"); }
+.bi-volume-up { --bi-icon: url("./icons/volume-up.svg"); }
+.bi-x-circle { --bi-icon: url("./icons/x-circle.svg"); }
+.bi-x-lg { --bi-icon: url("./icons/x-lg.svg"); }
+.bi-zoom-in { --bi-icon: url("./icons/zoom-in.svg"); }
+.bi-zoom-out { --bi-icon: url("./icons/zoom-out.svg"); }
