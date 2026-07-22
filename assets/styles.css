@@ -7,9 +7,9 @@
     --dark-control-bg-hover: #b8c0ff;
     --dark-control-text: #17210f;
     --dark-control-border: #9fa8e8;
-    --subtitle-word-current: #ffd54f;
-    --subtitle-word-past: #dbeafe;
-    --subtitle-word-upcoming: #ffffff;
+    --subtitle-word-current: #ffea00;
+    --subtitle-word-past: #ffe4ed;
+    --subtitle-word-upcoming: #fffdf7;
 }
 
 body {
@@ -493,9 +493,32 @@ html[data-theme="dark"] .lesson-radio:checked + .lesson-label {
 }
 
 .subtitle-translation {
-    color: #1d4ed8;
+    color: #fff1b8;
     font-size: 0.8em;
-    opacity: 0.92;
+    font-weight: 700;
+    opacity: 1;
+}
+
+.subtitle-primary {
+    color: #fffdf7;
+    font-weight: 800;
+}
+
+#subtitle-text {
+    display: inline-block;
+    padding: 9px 16px;
+    border: 2px solid rgba(255, 255, 255, 0.58);
+    border-radius: 16px;
+    background: linear-gradient(135deg,
+        rgba(236, 72, 153, 0.72),
+        rgba(251, 113, 133, 0.68));
+    box-shadow: 0 5px 14px rgba(190, 24, 93, 0.22);
+    line-height: 1.4;
+    text-shadow: -1px -1px 2px rgba(80, 7, 36, 0.92),
+        1px -1px 2px rgba(80, 7, 36, 0.92),
+        -1px 1px 2px rgba(80, 7, 36, 0.92),
+        1px 1px 2px rgba(80, 7, 36, 0.92),
+        0 2px 4px rgba(80, 7, 36, 0.7);
 }
 
 .subtitle-word {
