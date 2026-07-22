@@ -12,6 +12,7 @@
 .bi-arrow-repeat { --bi-icon: url("./icons/arrow-repeat.svg"); }
 .bi-arrows-fullscreen { --bi-icon: url("./icons/arrows-fullscreen.svg"); }
 .bi-bounding-box { --bi-icon: url("./icons/bounding-box.svg"); }
+.bi-book-open { --bi-icon: url("./icons/book-open.svg"); }
 .bi-box-arrow-left { --bi-icon: url("./icons/box-arrow-left.svg"); }
 .bi-brush-fill { --bi-icon: url("./icons/brush-fill.svg"); }
 .bi-chat-square-dots { --bi-icon: url("./icons/chat-square-dots.svg"); }
@@ -24,6 +25,7 @@
 .bi-gear { --bi-icon: url("./icons/gear.svg"); }
 .bi-hand-index { --bi-icon: url("./icons/hand-index.svg"); }
 .bi-list-ol { --bi-icon: url("./icons/list-ol.svg"); }
+.bi-keyboard { --bi-icon: url("./icons/keyboard.svg"); }
 .bi-lock-fill { --bi-icon: url("./icons/lock-fill.svg"); }
 .bi-music-player-fill { --bi-icon: url("./icons/music-player-fill.svg"); }
 .bi-palette-fill { --bi-icon: url("./icons/palette-fill.svg"); }
@@ -34,6 +36,7 @@
 .bi-play-fill { --bi-icon: url("./icons/play-fill.svg"); }
 .bi-speedometer { --bi-icon: url("./icons/speedometer.svg"); }
 .bi-stop-fill { --bi-icon: url("./icons/stop-fill.svg"); }
+.bi-three-dots { --bi-icon: url("./icons/three-dots.svg"); }
 .bi-trash { --bi-icon: url("./icons/trash.svg"); }
 .bi-trash3 { --bi-icon: url("./icons/trash3.svg"); }
 .bi-unlock-fill { --bi-icon: url("./icons/unlock-fill.svg"); }

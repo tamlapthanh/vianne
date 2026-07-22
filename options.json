@@ -33,55 +33,11 @@
             "fetch": true,
             "dual_page": true,  
             "group": 4
-        },              
-        {
-            "id": "radio_mind_map_35_subjects",
-            "data_type": "mind_map_35_subjects",
-            "label": "Mind map 35 subjects",
-            "max": 35,
-            "min": 1,
-            "current": 1,
-            "fetch": false,
-            "dual_page": true,  
-            "group": 1
-        },          
-        {
-            "id": "radio_Young_Children_6_12",
-            "data_type": "Young_Children_6_12",
-            "label": "Children (6-12)",
-            "max": 65,
-            "min": 1,
-            "current": 2,
-            "fetch": false,
-            "dual_page": false,  
-            "group": 1
-        },         
-        {
-            "id": "radio_Young_Children_2_5",
-            "data_type": "Young_Children_2_5",
-            "label": "Children (2-6)",
-            "max": 36,
-            "min": 1,
-            "current": 1,
-            "fetch": false,
-            "dual_page": false          ,  
-            "group": 1
-        },            
-        {
-            "id": "radio_word_by_word",
-            "data_type": "word_by_word",
-            "label": "Word by Word",
-            "max": 209,
-            "min": 1,
-            "current": 1,
-            "fetch": false,
-            "dual_page": true,  
-            "group": 1
-        },        
+        },                          
         {
             "id": "radio_student_37_book",
             "data_type": "student37",
-            "label": "Student book 37",
+            "label": "Student book 3",
             "max": 131,
             "min": 1,
             "current": 1,
@@ -92,7 +48,7 @@
         {
             "id": "radio_work_37_book",
             "data_type": "work37",
-            "label": "Work book 37",
+            "label": "Work book 3",
             "max": 96,
             "min": 1,
             "current": 1,
@@ -103,7 +59,7 @@
         {
             "id": "radio_btbt_37_book",
             "data_type": "btbt37",
-            "label": "BTBT 3",
+            "label": "BT bổ trợ 3",
             "max": 140,
             "min": 1,
             "current": 1,
@@ -114,7 +70,7 @@
         {
             "id": "radio_student_book",
             "data_type": "student",
-            "label": "Student book 27",
+            "label": "Student book 2",
             "max": 66,
             "min": 1,
             "current": 1,
@@ -125,25 +81,69 @@
         {
             "id": "radio_work_book",
             "data_type": "work",
-            "label": "Workbook 27",
+            "label": "Workbook 2",
             "max": 65,
             "min": 1,
             "current": 1,
             "fetch": true,
             "dual_page": true,  
             "group": 2
-        },
+        },   
+        {
+            "id": "radio_Young_Children_2_5",
+            "data_type": "Young_Children_2_5",
+            "label": "Picture Dictionary (2-6)",
+            "max": 36,
+            "min": 1,
+            "current": 1,
+            "fetch": false,
+            "dual_page": false          ,  
+            "group": 1
+        },            
+        {
+            "id": "radio_Young_Children_6_12",
+            "data_type": "Young_Children_6_12",
+            "label": "Picture Dictionary (6-12)",
+            "max": 65,
+            "min": 1,
+            "current": 1,
+            "fetch": false,
+            "dual_page": false,  
+            "group": 1
+        },              
+        {
+            "id": "radio_word_by_word",
+            "data_type": "word_by_word",
+            "label": "Word By Word Dictionary",
+            "max": 209,
+            "min": 1,
+            "current": 1,
+            "fetch": false,
+            "dual_page": true,  
+            "group": 1
+        },          
         {
             "id": "radio_dict_book",
             "data_type": "dict",
-            "label": "Dictionary",
+            "label": "Oxford Dictionary",
             "max": 87,
             "min": 1,
-            "current": 2,
+            "current": 1,
             "fetch": true,
             "dual_page": true,  
             "group": 1
         },
+        {
+            "id": "radio_mind_map_35_subjects",
+            "data_type": "mind_map_35_subjects",
+            "label": "Mind map 35 subjects",
+            "max": 35,
+            "min": 1,
+            "current": 1,
+            "fetch": false,
+            "dual_page": true,  
+            "group": 0
+        },            
         {
             "id": "radio_first_work_sheet",
             "data_type": "first_work_sheet",
@@ -153,12 +153,13 @@
             "current": 1,
             "fetch": true,
             "dual_page": false,  
-            "group": 1
+            "group": 0
         },
         {
             "id": "radio_math",
             "data_type": "math_page",
-            "label": "Math Game"
+            "label": "Math Game",
+            "group": -1
         }
     ]
 }

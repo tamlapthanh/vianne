@@ -270,6 +270,13 @@ body.auth-pending {
     margin-left: auto;
 }
 
+@media (min-width: 901px) {
+    .settings-dialog {
+        width: min(1040px, calc(100vw - 48px));
+        max-width: 1040px;
+    }
+}
+
 .settings-dialog .modal-content {
     max-height: calc(100dvh - 32px);
     border-radius: 16px;
@@ -317,9 +324,22 @@ body.auth-pending {
     scrollbar-color: #a5b4fc transparent;
 }
 
-@media (min-width: 901px) and (min-height: 700px) {
+@media (min-width: 901px) {
+    .settings-dialog {
+        height: auto;
+        max-height: none;
+    }
+
     .settings-dialog .modal-content {
-        min-height: 640px;
+        height: auto;
+        min-height: 0;
+        max-height: none;
+    }
+
+    .settings-dialog .modal-body,
+    .lesson-groups {
+        max-height: none;
+        overflow-y: visible;
     }
 }
 
@@ -348,10 +368,10 @@ body.auth-pending {
     min-height: 40px;
     padding: 10px 32px 10px 12px;
     overflow: hidden;
-    border: 1px solid #cbd5e1;
+    border: 1px solid var(--lesson-group-border, #cbd5e1);
     border-radius: 11px;
-    color: #334155;
-    background: #f8fafc;
+    color: var(--lesson-group-text, #334155);
+    background: var(--lesson-group-bg, #f8fafc);
     box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
     font-size: 13px;
     font-weight: 600;
@@ -381,8 +401,8 @@ body.auth-pending {
 }
 
 .lesson-label:hover {
-    border-color: #818cf8;
-    background: #eef2ff;
+    border-color: var(--lesson-group-border, #818cf8);
+    background: var(--lesson-group-hover, #eef2ff);
     box-shadow: 0 5px 14px rgba(79, 70, 229, 0.16);
     transform: translateY(-1px);
 }
@@ -406,13 +426,13 @@ body.auth-pending {
 
 html[data-theme="dark"] .lesson-label {
     color: var(--dark-panel-text);
-    border-color: #52613b;
-    background: #26321d;
+    border-color: var(--lesson-group-border, #52613b);
+    background: var(--lesson-group-dark-bg, #26321d);
 }
 
 html[data-theme="dark"] .lesson-label:hover {
-    border-color: #a5b4fc;
-    background: #354327;
+    border-color: var(--lesson-group-border, #a5b4fc);
+    background: var(--lesson-group-dark-hover, #354327);
 }
 
 html[data-theme="dark"] .lesson-radio:checked + .lesson-label {
