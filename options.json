@@ -16,7 +16,7 @@
             "id": "radio_student47_2_book",
             "data_type": "student47_2",
             "label": "Student book 4 (tập 2)",
-            "max": 80,
+            "max": 76,
             "min": 1,
             "current": 1,
             "fetch": true,
