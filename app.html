@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Viance 4/7 1.0.0</title>
     <link rel="manifest" href="./assets/manifest-BDiz6hGs.json" />
-    <link rel="shortcut icon" type="image/png" href="./assets/favicon-CiX55uzs.png" />
-    <script type="module" crossorigin src="./assets/app-iGyxNjgW.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/auth-service-DI2mr-uW.js">
+    <link rel="shortcut icon" type="image/png" href="./assets/favicon-CiX55uzs.png" />
+    <script type="module" crossorigin src="./assets/app-CoPKA-bv.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/auth-service-DPZqYEkN.js">
     <link rel="modulepreload" crossorigin href="./assets/konva-BoNnv-Ev.js">
-    <link rel="stylesheet" crossorigin href="./assets/auth-service-BnfOAV0J.css">
-    <link rel="stylesheet" crossorigin href="./assets/app-CL-YoWZ8.css">
+    <link rel="stylesheet" crossorigin href="./assets/auth-service-Bme3T1BH.css">
+    <link rel="stylesheet" crossorigin href="./assets/app-erIUQFZW.css">
   </head>
 
-  <body>
+  <body class="auth-pending">
     <div id="canvas-container">
       <div class="toast-container position-fixed top-50 start-50 translate-middle" ></div>
 
@@ -57,7 +57,6 @@
           <button class="btn btn-primary toggle-btn" aria-label="Media tools" title="Media"><i class="bi bi-play-btn"></i><span>Media</span></button>
           <button id="id_ShowPanel" class="btn btn-light" aria-label="Show media panel" title="Media panel"><i class="bi bi-music-player-fill"></i><span>Panel</span></button>
           <button id="auto-play-btn" class="btn btn-light" aria-label="Toggle autoplay" title="Autoplay"><i class="bi bi-play-btn"></i><span>Autoplay</span></button>
-          <button id="show-vocabulary-btn" class="btn btn-light" aria-label="Show vocabulary" title="Vocabulary"><i class="bi bi-collection-play-fill"></i><span>Vocabulary</span></button>
         </div>
 
         <div class="group-controls more-group">
@@ -72,18 +71,19 @@
         <i class="bi bi-gear"></i><span>Tools</span>
       </button>
       <div id="toolbar-status" class="toolbar-status" aria-live="polite">
-        <span id="active-tool-status" hidden>Ready</span><span id="zoom-status">100%</span>
+        <span id="active-tool-status" hidden>Ready</span><button id="zoom-status" type="button"
+          aria-label="Zoom is 100%" title="Zoom is already reset" disabled>100%</button>
         <button id="save-status" type="button" class="is-saved" aria-label="Canvas is saved" disabled>Saved</button>
       </div>
     </div>
 
     <!-- New Buttons with Icons -->
     <div class="page-navigation" aria-label="Page navigation">
-      <button id="previous_page" class="btn btn-info side-btn" aria-label="Previous page">
+      <button id="previous_page" class="btn btn-primary side-btn" aria-label="Previous page">
         <i class="bi bi-chevron-right nav-chevron-up"></i>
       </button>
-      <span class="side-page-number" id="page-number">1 / 1</span>
-      <button id="next_page" class="btn btn-info side-btn" aria-label="Next page">
+      <div class="side-page-numbers" id="page-number" aria-label="Page links"></div>
+      <button id="next_page" class="btn btn-primary side-btn" aria-label="Next page">
         <i class="bi bi-chevron-right nav-chevron-down"></i>
       </button>
     </div>
@@ -96,55 +96,78 @@
       aria-labelledby="settingsModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-fluid">
-        <!-- Thêm modal-fluid -->
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable settings-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h3 class="modal-title" id="settingsModalLabel"> Jump to which page? </h3>
+            <h3 class="modal-title" id="settingsModalLabel"> Choose lession and setting </h3>
             <button type="button" class="btn-close" data-modal-dismiss aria-label="Close" ></button>
           </div>
           <div class="modal-body">
-            <div class="container mt-2">
-              <div
-                class="d-flex flex-wrap align-items-center"
-                id="radioContainer"
-              >
+            <fieldset class="lesson-settings">
+              <legend>Lessons</legend>
+              <div id="radioContainer" class="lesson-groups" role="radiogroup" aria-label="Choose lesson">
                 <!-- radios here-->
               </div>
-            </div>
+            </fieldset>
 
-            <!-- <hr class="my-4 border border-primary" /> -->
-            <div class="input-group flex-nowrap">
-              <select id="json-dropdown" class="form-select"></select>
-            </div>
+            <div class="settings-control-row page-display-row">
+              <div class="setting-field page-setting-field">
+                <label for="json-dropdown" class="form-label">Page</label>
+                <select id="json-dropdown" class="form-select"></select>
+              </div>
 
-            <!-- <hr class="my-4 border border-primary" /> -->
-            <div class="range-container">
-              <label for="range2" class="form-label">Stroke Width</label>
-              <input type="range" class="form-range" id="id_line_stroke_width" min="1" max="9" step="1" value="3" />
-              <div class="range-labels">
-                <span>1</span>
-                <span>2</span>
-                <span>3</span>
-                <span>4</span>
-                <span>5</span>
-                <span>6</span>
-                <span>7</span>
-                <span>8</span>
-                <span>9</span>
+              <div class="form-check form-switch two-page-setting">
+                <input class="form-check-input" type="checkbox" id="showTwoOrOnePage" checked>
+                <label class="form-check-label" for="showTwoOrOnePage">Two images per a page</label>
               </div>
             </div>
 
-            <!-- <hr class="my-4 border border-primary" /> -->
-            <div class="range-container">
-              <label for="select_color" class="form-label" >Select Color: </label>
-              <input type="text" class="coloris instance1" value="Tomato" data-target="window" />
+            <div class="settings-control-row drawing-setting-row">
+              <div class="range-container setting-field stroke-setting-field">
+                <label for="id_line_stroke_width" class="form-label">Stroke Width</label>
+                <input type="range" class="form-range" id="id_line_stroke_width" min="1" max="9" step="1" value="3" />
+                <div class="range-labels">
+                  <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+                  <span>6</span><span>7</span><span>8</span><span>9</span>
+                </div>
+              </div>
+
+              <div class="range-container setting-field color-setting-field">
+                <label for="select_color" class="form-label">Select Color</label>
+                <input id="select_color" type="text" class="coloris instance1" value="Tomato" data-target="window" />
+              </div>
             </div>
 
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" id="showTwoOrOnePage" checked>
-              <label class="form-check-label" for="showTwoOrOnePage">Show two pages</label>
-            </div>         
+            <fieldset class="subtitle-settings">
+              <legend>Subtitle</legend>
+              <div class="subtitle-toggle-options">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="subtitle-show-primary" checked>
+                  <label class="form-check-label" for="subtitle-show-primary">Chỉ hiển thị Tiếng Anh</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="subtitle-show-translation" checked>
+                  <label class="form-check-label" for="subtitle-show-translation">Chỉ hiển thị Tiếng Việt</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="subtitle-word-highlight" checked>
+                  <label class="form-check-label" for="subtitle-word-highlight">Highlight từng từ Tiếng Anh</label>
+                </div>
+              </div>
+              <div class="subtitle-position-options" role="radiogroup" aria-label="Vị trí subtitle">
+                <span>Vị trí:</span>
+                <label><input type="radio" name="subtitle-position" value="top"> Trên cùng</label>
+                <label><input type="radio" name="subtitle-position" value="center" checked> Giữa</label>
+                <label><input type="radio" name="subtitle-position" value="bottom"> Dưới cùng</label>
+              </div>
+            </fieldset>
+
+            <div class="dark-mode-row">
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="dark-mode-toggle">
+                <label class="form-check-label" for="dark-mode-toggle">Dark mode</label>
+              </div>
+            </div>
 
             <br />
             <div class="modal-footer">
@@ -178,25 +201,7 @@
       </div>
     </div>
 
-    <div
-      id="tooltip"
-      style="
-        position: absolute;
-        padding: 6px 10px;
-        background: rgba(30, 30, 30, 0.75);
-        backdrop-filter: blur(6px);
-        color: #fff;
-        border-radius: 6px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-        pointer-events: none;
-        display: none;
-        font-size: 14px;
-        line-height: 1.4;
-        z-index: 1000;
-        transition: opacity 0.15s ease;
-        opacity: 0;
-      "
-    ></div>
+    <div id="tooltip" class="canvas-tooltip text-tooltip"></div>
 
 
     
