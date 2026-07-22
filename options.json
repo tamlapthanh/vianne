@@ -1,5 +1,5 @@
 {
-    "default_data_type": "student47_1",
+    "default_data_type": "student47_2",
     "data": [
         {
             "id": "radio_student47_1_book",
@@ -12,6 +12,17 @@
             "dual_page": true,  
             "group": 4
         },      
+        {
+            "id": "radio_student47_2_book",
+            "data_type": "student47_2",
+            "label": "Student book 4 (tập 2)",
+            "max": 80,
+            "min": 1,
+            "current": 1,
+            "fetch": true,
+            "dual_page": true,  
+            "group": 4
+        },          
         {
             "id": "radio_mind_map_35_subjects",
             "data_type": "mind_map_35_subjects",
