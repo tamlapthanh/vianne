@@ -145,6 +145,17 @@ body.auth-pending {
 .app-dialog p { margin: 0; color: #475569; line-height: 1.5; }
 .app-dialog-actions { display: flex; justify-content: center; gap: 10px; margin-top: 22px; }
 .app-dialog-actions .btn { min-width: 104px; border-radius: 10px; }
+.app-dialog-actions .btn-soft-danger {
+    color: #b42318;
+    background: #fee4e2;
+    border-color: #fda29b;
+}
+.app-dialog-actions .btn-soft-danger:hover,
+.app-dialog-actions .btn-soft-danger:focus-visible {
+    color: #912018;
+    background: #fecdca;
+    border-color: #f97066;
+}
 
 @keyframes app-dialog-in {
     from { opacity: 0; transform: translateY(8px) scale(0.97); }
@@ -600,6 +611,19 @@ html[data-theme="dark"] .controls .btn:hover {
     color: var(--dark-control-text) !important;
     background: var(--dark-control-bg-hover) !important;
     border-color: var(--dark-control-border) !important;
+}
+
+html[data-theme="dark"] .app-dialog-actions .btn-soft-danger {
+    color: #fecaca !important;
+    background: #7f1d1d !important;
+    border-color: #f87171 !important;
+}
+
+html[data-theme="dark"] .app-dialog-actions .btn-soft-danger:hover,
+html[data-theme="dark"] .app-dialog-actions .btn-soft-danger:focus-visible {
+    color: #fff1f2 !important;
+    background: #991b1b !important;
+    border-color: #fca5a5 !important;
 }
 
 html[data-theme="dark"] .btn i,
