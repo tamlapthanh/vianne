@@ -1371,6 +1371,29 @@ html[data-theme="dark"] .page-number-link.is-current:disabled {
 }
 
 @media (max-width: 768px) {
+    .page-navigation {
+        right: auto;
+        left: 50%;
+        top: auto;
+        bottom: calc(max(12px, env(safe-area-inset-bottom)) + 50px);
+        transform: translateX(-50%);
+        flex-direction: row;
+        gap: 3px;
+    }
+
+    .side-page-numbers {
+        flex-direction: row;
+        gap: 2px;
+    }
+
+    .nav-chevron-up {
+        transform: rotate(180deg);
+    }
+
+    .nav-chevron-down {
+        transform: none;
+    }
+
     #audio-control-panel {
         left: 8px !important;
         right: 8px !important;
