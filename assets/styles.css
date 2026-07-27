@@ -967,6 +967,10 @@ html[data-theme="dark"] .form-check-input:checked + .form-check-label {
     backdrop-filter: blur(6px);
 }
 
+.page-navigation.is-hidden-for-mobile-zoom {
+    display: none;
+}
+
 /* Buttons positioned on the sides */
 .side-btn {
     position: static;
