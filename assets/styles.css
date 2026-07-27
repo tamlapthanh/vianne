@@ -145,6 +145,59 @@ body.auth-pending {
 .app-dialog p { margin: 0; color: #475569; line-height: 1.5; }
 .app-dialog-actions { display: flex; justify-content: center; gap: 10px; margin-top: 22px; }
 .app-dialog-actions .btn { min-width: 104px; border-radius: 10px; }
+.app-text-input-dialog {
+    width: min(520px, 100%);
+}
+
+.app-text-input-dialog textarea {
+    width: 100%;
+    min-height: 120px;
+    margin-top: 14px;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    color: #172554;
+    background: #fff;
+    text-align: left;
+    resize: vertical;
+}
+
+.app-text-input-dialog textarea.is-placeholder-centered {
+    text-align: center;
+}
+
+.app-text-input-dialog textarea.is-placeholder-centered::placeholder {
+    text-align: center;
+}
+
+.app-text-style-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.app-text-style-controls[hidden] {
+    display: none;
+}
+
+.app-text-style-controls label {
+    display: grid;
+    gap: 4px;
+    color: #475569;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.app-text-style-controls .form-control-color {
+    width: 100%;
+}
+
+.app-text-input-dialog textarea:focus {
+    border-color: #60a5fa;
+    outline: 3px solid rgba(96, 165, 250, 0.22);
+}
 .app-dialog-actions .btn-soft-danger {
     color: #b42318;
     background: #fee4e2;
@@ -906,6 +959,12 @@ html[data-theme="dark"] .form-check-input:checked + .form-check-label {
     flex-direction: column;
     align-items: center;
     gap: 2px;
+    padding: 4px 6px;
+    border: 1px solid rgba(15, 23, 42, 0.14);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.16);
+    backdrop-filter: blur(6px);
 }
 
 /* Buttons positioned on the sides */
