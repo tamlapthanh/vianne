@@ -95,10 +95,11 @@ body.auth-pending {
     transform: translateX(-50%);
     z-index: 30;
     display: flex;
-    flex-direction: row;
+    flex-flow: row nowrap;
+    direction: ltr;
     align-items: flex-end;
     justify-content: flex-start;
-    gap: 6px;
+    gap: 3px;
     padding: 0;
     border: 0;
     background: transparent;
@@ -1220,7 +1221,7 @@ select:disabled {
         max-width: calc(100vw - 64px);
         transform: translateX(-50%);
         justify-content: flex-start;
-        gap: 3px;
+        gap: 2px;
         padding: 0;
     }
 
