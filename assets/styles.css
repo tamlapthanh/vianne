@@ -890,6 +890,13 @@ html[data-theme="dark"] .form-check-input:checked + .form-check-label {
     color: #334155;
 }
 
+.controls .more-group #auto-play-toggle[aria-pressed="true"],
+.controls .more-group.is-expanded #auto-play-toggle[aria-pressed="true"] {
+    border-color: #22c55e !important;
+    color: #fff !important;
+    background: #16a34a !important;
+}
+
 .controls #snap-btn {
     position: relative;
 }
@@ -1162,57 +1169,6 @@ select:disabled {
     font-weight: 500;
 }
 
-#countdown-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 120px;
-    font-weight: bold;
-    color: #ff4757;
-    /* text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6); */
-    pointer-events: none;
-    z-index: 100;
-    opacity: 0;
-    /* transition: opacity 0.3s ease, transform 0.3s ease; */
-    font-family: Arial, sans-serif;
-    user-select: none;
-}
-
-/* Hiệu ứng hiển thị */
-#countdown-overlay.show {
-    opacity: 1;
-}
-
-/* Hiệu ứng rung khi còn 1 giây */
-#countdown-overlay.vibrate {
-    animation: vibrate 0.3s linear infinite;
-}
-
-@keyframes vibrate {
-
-    0%,
-    100% {
-        transform: translate(-50%, -50%) translateX(0);
-    }
-
-    20% {
-        transform: translate(-50%, -50%) translateX(-4px);
-    }
-
-    40% {
-        transform: translate(-50%, -50%) translateX(4px);
-    }
-
-    60% {
-        transform: translate(-50%, -50%) translateX(-4px);
-    }
-
-    80% {
-        transform: translate(-50%, -50%) translateX(4px);
-    }
-}
-
 /* Mobile: nhỏ hơn */
 @media (max-width: 768px) {
     .controls {
@@ -1267,9 +1223,6 @@ select:disabled {
         padding: 2px;
     }
 
-    #countdown-overlay {
-        font-size: 80px;
-    }
 }
 
 /* cho modal */

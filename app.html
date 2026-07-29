@@ -6,11 +6,11 @@
     <title>Viance 4/7 1.0.0</title>
     <link rel="manifest" href="./assets/manifest-BDiz6hGs.json" />
     <link rel="shortcut icon" type="image/png" href="./assets/favicon-CiX55uzs.png" />
-    <script type="module" crossorigin src="./assets/app-DGDdtI5s.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/auth-service-BUkw_Dqm.js">
+    <script type="module" crossorigin src="./assets/app-Dc8MFwl4.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/auth-service-o_BECBtr.js">
     <link rel="modulepreload" crossorigin href="./assets/konva-BoNnv-Ev.js">
-    <link rel="stylesheet" crossorigin href="./assets/auth-service-Cjc3GxOn.css">
-    <link rel="stylesheet" crossorigin href="./assets/app-C5ljUv37.css">
+    <link rel="stylesheet" crossorigin href="./assets/auth-service-DbY95Ndl.css">
+    <link rel="stylesheet" crossorigin href="./assets/app-D8cWFVTG.css">
   </head>
 
   <body class="auth-pending">
@@ -22,8 +22,6 @@
 
       <!-- Loading Spinner Overlay -->
       <div class="overlay-async" id="spinnerOverlay_async_id"> <span class="spinner-icon" role="status" aria-label="Loading"></span> </div>
-
-      <div id="countdown-overlay"></div>
 
       <div id="canvas"></div>
 
@@ -54,6 +52,10 @@
 
         <div class="group-controls more-group">
           <button id="setting" class="btn btn-primary toggle-btn" aria-label="More options" title="More"><i class="bi bi-three-dots"></i><span>More</span></button>
+          <button id="auto-play-toggle" type="button" class="btn btn-light"
+            aria-label="Start autoplay audio" aria-pressed="false" title="Start autoplay audio">
+            <i class="bi bi-play-circle-fill"></i><span>Autoplay</span>
+          </button>
           <button id="settings-open" class="btn btn-light" data-modal-target="#settingsModal" aria-label="Choose lesson or page" title="Lessons"><i class="bi bi-book-open"></i><span>Lessons</span></button>
           <button id="shortcuts-open" class="btn btn-light" data-modal-target="#shortcutsModal" aria-label="Show keyboard shortcuts" title="Shortcuts"><i class="bi bi-keyboard"></i><span>Shortcuts</span></button>
           <button id="logout" class="btn btn-light text-danger" aria-label="Log out" title="Log out"><i class="bi bi-box-arrow-left"></i><span>Logout</span></button>
@@ -159,10 +161,6 @@
               <div class="form-check form-switch">
                 <input class="form-check-input" type="checkbox" id="dark-mode-toggle">
                 <label class="form-check-label" for="dark-mode-toggle">Dark mode</label>
-              </div>
-              <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="auto-play-toggle">
-                <label class="form-check-label" for="auto-play-toggle">Autoplay</label>
               </div>
             </div>
 
