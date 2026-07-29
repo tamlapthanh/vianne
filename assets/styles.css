@@ -857,6 +857,41 @@ html[data-theme="dark"] .form-check-input:checked + .form-check-label {
     box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
 }
 
+.controls .content-group > .toggle-btn {
+    border-color: #15803d !important;
+    background: #16a34a !important;
+    color: #fff !important;
+}
+
+.controls .draw-group > .toggle-btn {
+    border-color: #c2410c !important;
+    background: #ea580c !important;
+    color: #fff !important;
+}
+
+.controls .zoom-group > .toggle-btn {
+    border-color: #1d4ed8 !important;
+    background: #2563eb !important;
+    color: #fff !important;
+}
+
+.controls .autoplay-group > .toggle-btn {
+    border-color: #6d28d9 !important;
+    background: #7c3aed !important;
+    color: #fff !important;
+}
+
+.controls .more-group > .toggle-btn {
+    border-color: #334155 !important;
+    background: #475569 !important;
+    color: #fff !important;
+}
+
+.controls .group-controls > .toggle-btn:hover,
+.controls .group-controls > .toggle-btn:focus-visible {
+    filter: brightness(1.08);
+}
+
 .controls .group-controls.is-expanded .toggle-btn {
     box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.18);
 }
@@ -884,17 +919,35 @@ html[data-theme="dark"] .form-check-input:checked + .form-check-label {
     color: #1d4ed8;
 }
 
+.controls .autoplay-group.is-expanded .btn:not(.toggle-btn) {
+    border-color: #a5b4fc;
+    background: #eef2ff;
+    color: #3730a3;
+}
+
 .controls .more-group.is-expanded .btn:not(.toggle-btn) {
     border-color: #cbd5e1;
     background: #f8fafc;
     color: #334155;
 }
 
-.controls .more-group #auto-play-toggle[aria-pressed="true"],
-.controls .more-group.is-expanded #auto-play-toggle[aria-pressed="true"] {
+.controls .autoplay-group #auto-play-toggle[aria-pressed="true"],
+.controls .autoplay-group.is-expanded #auto-play-toggle[aria-pressed="true"] {
     border-color: #22c55e !important;
     color: #fff !important;
     background: #16a34a !important;
+}
+
+.controls .autoplay-group #auto-play-mode-toggle[data-mode="next_page"] {
+    border-color: #60a5fa !important;
+    color: #1e3a8a !important;
+    background: #dbeafe !important;
+}
+
+.controls .autoplay-group #auto-play-mode-toggle[data-mode="loop_page"] {
+    border-color: #fb923c !important;
+    color: #9a3412 !important;
+    background: #ffedd5 !important;
 }
 
 .controls #snap-btn {

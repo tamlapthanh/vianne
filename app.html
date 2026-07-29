@@ -6,11 +6,11 @@
     <title>Viance 4/7 1.0.0</title>
     <link rel="manifest" href="./assets/manifest-BDiz6hGs.json" />
     <link rel="shortcut icon" type="image/png" href="./assets/favicon-CiX55uzs.png" />
-    <script type="module" crossorigin src="./assets/app-Dc8MFwl4.js"></script>
+    <script type="module" crossorigin src="./assets/app-BvEu4dEl.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/auth-service-o_BECBtr.js">
     <link rel="modulepreload" crossorigin href="./assets/konva-BoNnv-Ev.js">
     <link rel="stylesheet" crossorigin href="./assets/auth-service-DbY95Ndl.css">
-    <link rel="stylesheet" crossorigin href="./assets/app-D8cWFVTG.css">
+    <link rel="stylesheet" crossorigin href="./assets/app-D7MXwOM1.css">
   </head>
 
   <body class="auth-pending">
@@ -50,12 +50,24 @@
           <button id="snap-btn" class="btn btn-light snap-toggle" aria-label="Alignment snap off" title="Alignment snap off"><i class="bi bi-bounding-box"></i><span>Snap Off</span></button>
         </div>
 
-        <div class="group-controls more-group">
-          <button id="setting" class="btn btn-primary toggle-btn" aria-label="More options" title="More"><i class="bi bi-three-dots"></i><span>More</span></button>
+        <div class="group-controls autoplay-group">
+          <button class="btn btn-primary toggle-btn" aria-label="Autoplay audio tools" title="Autoplay">
+            <i class="bi bi-music-player-fill"></i><span>Autoplay</span>
+          </button>
           <button id="auto-play-toggle" type="button" class="btn btn-light"
             aria-label="Start autoplay audio" aria-pressed="false" title="Start autoplay audio">
             <i class="bi bi-play-circle-fill"></i><span>Autoplay</span>
           </button>
+          <button id="auto-play-mode-toggle" type="button" class="btn btn-light"
+            data-mode="next_page"
+            aria-label="Next Page: play all audio then change page"
+            title="Next Page: play all audio then change page">
+            <i class="bi bi-chevron-right"></i><span>Next Page</span>
+          </button>
+        </div>
+
+        <div class="group-controls more-group">
+          <button id="setting" class="btn btn-primary toggle-btn" aria-label="More options" title="More"><i class="bi bi-three-dots"></i><span>More</span></button>
           <button id="settings-open" class="btn btn-light" data-modal-target="#settingsModal" aria-label="Choose lesson or page" title="Lessons"><i class="bi bi-book-open"></i><span>Lessons</span></button>
           <button id="shortcuts-open" class="btn btn-light" data-modal-target="#shortcutsModal" aria-label="Show keyboard shortcuts" title="Shortcuts"><i class="bi bi-keyboard"></i><span>Shortcuts</span></button>
           <button id="logout" class="btn btn-light text-danger" aria-label="Log out" title="Log out"><i class="bi bi-box-arrow-left"></i><span>Logout</span></button>
@@ -141,7 +153,7 @@
                   <label class="form-check-label" for="subtitle-show-primary">Hiển thị Tiếng Anh</label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="subtitle-show-translation" checked>
+                  <input class="form-check-input" type="checkbox" id="subtitle-show-translation">
                   <label class="form-check-label" for="subtitle-show-translation">Hiển thị Tiếng Việt</label>
                 </div>
                 <div class="form-check">
