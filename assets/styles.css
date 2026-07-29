@@ -247,8 +247,7 @@ body.auth-pending {
 }
 
 .settings-dialog .form-label,
-.settings-dialog .form-check-label,
-.settings-dialog .subtitle-position-options {
+.settings-dialog .form-check-label {
     margin-bottom: 6px;
     font-size: 13px;
     font-weight: 600;
@@ -284,19 +283,13 @@ body.auth-pending {
     margin: 0;
 }
 
-.subtitle-settings,
 .lesson-settings {
-    margin-top: 12px;
+    margin-top: 0;
     padding: 10px 12px;
     border: 1px solid rgba(15, 23, 42, 0.14);
     border-radius: 10px;
 }
 
-.lesson-settings {
-    margin-top: 0;
-}
-
-.subtitle-settings legend,
 .lesson-settings legend {
     float: none;
     width: auto;
@@ -304,32 +297,6 @@ body.auth-pending {
     padding: 0 5px;
     font-size: 13px;
     font-weight: 700;
-}
-
-.subtitle-toggle-options {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    gap: 10px 20px;
-    overflow-x: auto;
-    scrollbar-width: thin;
-}
-
-.subtitle-toggle-options .form-check {
-    flex: 0 0 auto;
-    margin: 0;
-}
-
-.subtitle-position-options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px 12px;
-    margin-top: 8px;
-    font-size: 12px;
-}
-
-.subtitle-position-options label {
-    cursor: pointer;
 }
 
 .settings-dialog {
@@ -635,14 +602,11 @@ html[data-theme="dark"] .shortcut-list {
     color: var(--dark-panel-text);
 }
 
-html[data-theme="dark"] .subtitle-settings,
 html[data-theme="dark"] .lesson-settings {
     border-color: #52613b;
 }
 
-html[data-theme="dark"] .subtitle-settings legend,
-html[data-theme="dark"] .lesson-settings legend,
-html[data-theme="dark"] .subtitle-position-options {
+html[data-theme="dark"] .lesson-settings legend {
     color: var(--dark-panel-text);
 }
 
@@ -656,6 +620,7 @@ html[data-theme="dark"] input[type="text"] {
 html[data-theme="dark"] .btn,
 html[data-theme="dark"] .controls .btn,
 html[data-theme="dark"] .controls .group-controls.is-expanded .btn:not(.toggle-btn),
+html[data-theme="dark"] .controls .toolbar-switch-control,
 html[data-theme="dark"] .toolbar-dock-toggle,
 html[data-theme="dark"] .side-btn,
 html[data-theme="dark"] .app-dialog-actions .btn {
@@ -719,6 +684,27 @@ html[data-theme="dark"] .form-check-input:checked + .form-check-label {
     transform: translate(-50%, 12px);
 }
 
+.controls.is-quick-mode .group-controls {
+    display: none;
+}
+
+.controls.is-quick-mode {
+    right: max(12px, env(safe-area-inset-right));
+    left: auto;
+    bottom: calc(max(12px, env(safe-area-inset-bottom)) + 44px);
+    transform: none;
+    align-items: flex-end;
+    z-index: 10010;
+}
+
+.controls.is-quick-mode .group-controls.is-quick-active {
+    display: flex;
+}
+
+.controls.is-quick-mode .group-controls.is-quick-active > .toggle-btn {
+    display: none;
+}
+
 .toolbar-dock-toggle {
     position: fixed;
     right: max(12px, env(safe-area-inset-right));
@@ -736,6 +722,45 @@ html[data-theme="dark"] .form-check-input:checked + .form-check-label {
 
 .toolbar-dock-toggle span {
     font-size: 11px;
+}
+
+.toolbar-dock-toggle.is-content-tool {
+    color: #fff !important;
+    background: #16a34a !important;
+    border-color: #15803d !important;
+}
+
+.toolbar-dock-toggle.is-draw-tool {
+    color: #fff !important;
+    background: #ea580c !important;
+    border-color: #c2410c !important;
+}
+
+.toolbar-dock-toggle.is-view-tool {
+    color: #fff !important;
+    background: #2563eb !important;
+    border-color: #1d4ed8 !important;
+}
+
+.toolbar-dock-toggle.is-autoplay-tool {
+    color: #fff !important;
+    background: #7c3aed !important;
+    border-color: #6d28d9 !important;
+}
+
+.toolbar-dock-toggle.is-more-tool {
+    color: #fff !important;
+    background: #475569 !important;
+    border-color: #334155 !important;
+}
+
+.toolbar-dock-toggle.is-tool-shortcut:hover,
+.toolbar-dock-toggle.is-tool-shortcut:focus-visible {
+    filter: brightness(1.08);
+}
+
+.toolbar-dock-toggle.is-tool-shortcut {
+    z-index: 10011;
 }
 
 .toolbar-status {
@@ -777,6 +802,12 @@ html[data-theme="dark"] .form-check-input:checked + .form-check-label {
     color: #166534;
     background: rgba(220, 252, 231, 0.92);
     border: 1px solid rgba(134, 239, 172, 0.7);
+}
+
+.toolbar-status #active-tool-status.is-drawing {
+    color: #9a3412;
+    background: rgba(255, 237, 213, 0.96);
+    border: 1px solid rgba(251, 146, 60, 0.75);
 }
 
 .toolbar-status #zoom-status.is-default-zoom {
@@ -831,6 +862,14 @@ html[data-theme="dark"] .form-check-input:checked + .form-check-label {
 }
 
 .group-controls.is-expanded .btn:not(.toggle-btn) {
+    display: flex;
+}
+
+.group-controls .toolbar-switch-control {
+    display: none;
+}
+
+.group-controls.is-expanded .toolbar-switch-control {
     display: flex;
 }
 
@@ -923,6 +962,164 @@ html[data-theme="dark"] .form-check-input:checked + .form-check-label {
     border-color: #a5b4fc;
     background: #eef2ff;
     color: #3730a3;
+}
+
+.controls .toolbar-switch-control {
+    min-height: 42px;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    padding: 6px 10px;
+    color: #166534;
+    background: #ecfdf5;
+    border: 1px solid #86efac;
+    border-radius: 11px;
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.14);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.controls .toolbar-switch-control span {
+    font-size: 11px;
+    line-height: 1;
+}
+
+.controls .toolbar-switch-control .form-check-input {
+    float: none;
+    flex: 0 0 auto;
+    margin: 0 0 0 auto;
+    cursor: pointer;
+}
+
+.controls .toolbar-radio-control {
+    gap: 5px;
+}
+
+.controls .toolbar-radio-control > label {
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+}
+
+.controls .toolbar-radio-control > label input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.controls .toolbar-radio-control > label b {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 6px;
+    color: #475569;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 10px;
+    line-height: 1;
+}
+
+.controls .toolbar-radio-control > label input:checked + b {
+    color: #fff;
+    background: #7c3aed;
+    border-color: #6d28d9;
+}
+
+.controls .toolbar-radio-control > label input:focus-visible + b {
+    outline: 2px solid #60a5fa;
+    outline-offset: 2px;
+}
+
+.controls .subtitle-position-icon {
+    position: relative;
+    display: block;
+    width: 14px;
+    height: 14px;
+    border: 1.5px solid currentColor;
+    border-radius: 3px;
+}
+
+.controls .subtitle-position-icon::after {
+    position: absolute;
+    right: 2px;
+    left: 2px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+    content: "";
+}
+
+.controls .subtitle-position-icon.is-top::after {
+    top: 2px;
+}
+
+.controls .subtitle-position-icon.is-center::after {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.controls .subtitle-position-icon.is-bottom::after {
+    bottom: 2px;
+}
+
+.controls .toolbar-option-icon {
+    position: relative;
+    display: inline-block;
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+    color: currentColor;
+}
+
+.controls .subtitle-location-menu-icon::before {
+    position: absolute;
+    top: 1px;
+    left: 3px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid currentColor;
+    border-radius: 50% 50% 50% 0;
+    content: "";
+    transform: rotate(-45deg);
+}
+
+.controls .subtitle-location-menu-icon::after {
+    position: absolute;
+    top: 4px;
+    left: 7px;
+    width: 3px;
+    height: 3px;
+    background: currentColor;
+    border-radius: 50%;
+    content: "";
+}
+
+.controls .karaoke-menu-icon::before {
+    position: absolute;
+    top: 0;
+    left: 4px;
+    width: 8px;
+    height: 11px;
+    border: 2px solid currentColor;
+    border-radius: 6px;
+    content: "";
+}
+
+.controls .karaoke-menu-icon::after {
+    position: absolute;
+    top: 5px;
+    left: 2px;
+    width: 12px;
+    height: 11px;
+    background:
+        linear-gradient(currentColor, currentColor) center bottom / 8px 2px no-repeat,
+        linear-gradient(currentColor, currentColor) center bottom / 2px 5px no-repeat;
+    border: 2px solid currentColor;
+    border-top: 0;
+    border-radius: 0 0 7px 7px;
+    content: "";
 }
 
 .controls .more-group.is-expanded .btn:not(.toggle-btn) {
@@ -1129,7 +1326,7 @@ select:disabled {
 
 .app-tooltip {
     position: fixed;
-    z-index: 10000;
+    z-index: 10020;
     max-width: min(260px, calc(100vw - 16px));
     padding: 7px 11px;
     border: 1px solid rgba(165, 180, 252, 0.7);
@@ -1238,6 +1435,12 @@ select:disabled {
         transform: translate(-50%, 12px);
     }
 
+    .controls.is-quick-mode {
+        right: 8px;
+        left: auto;
+        transform: none;
+    }
+
     .controls .btn {
         min-width: 42px;
         height: 42px;
@@ -1255,6 +1458,91 @@ select:disabled {
     .controls .group-controls.is-expanded .btn:not(.toggle-btn) {
         min-width: 42px;
         justify-content: center;
+    }
+
+    .controls .toolbar-switch-control {
+        min-width: 42px;
+        min-height: 42px;
+        justify-content: center;
+        padding: 5px;
+    }
+
+    .controls .toolbar-switch-control > i,
+    .controls .toolbar-switch-control > span {
+        display: none;
+    }
+
+    .controls .toolbar-switch-control .form-check-input {
+        margin: 0;
+    }
+
+    .controls .group-controls.is-expanded > .btn:not(.toggle-btn),
+    .controls .group-controls.is-expanded > .toolbar-switch-control:not(.toolbar-radio-control) {
+        position: relative;
+        overflow: visible;
+    }
+
+    .controls .group-controls.is-expanded > .btn:not(.toggle-btn) > span,
+    .controls .group-controls.is-expanded > .toolbar-switch-control:not(.toolbar-radio-control) > span {
+        position: absolute;
+        right: calc(100% + 6px);
+        display: block;
+        min-width: max-content;
+        padding: 5px 8px;
+        color: #fff;
+        background: rgba(67, 56, 202, 0.96);
+        border: 1px solid rgba(165, 180, 252, 0.9);
+        border-radius: 8px;
+        box-shadow: 0 3px 9px rgba(30, 41, 59, 0.24);
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 1;
+        pointer-events: none;
+    }
+
+    .controls .content-group.is-expanded > .btn:not(.toggle-btn) > span,
+    .controls .draw-group.is-expanded > .btn:not(.toggle-btn) > span {
+        right: auto;
+        left: calc(100% + 6px);
+    }
+
+    .controls .content-group.is-expanded > .btn:not(.toggle-btn) > span {
+        background: rgba(21, 128, 61, 0.96);
+        border-color: rgba(134, 239, 172, 0.9);
+    }
+
+    .controls .draw-group.is-expanded > .btn:not(.toggle-btn) > span {
+        background: rgba(194, 65, 12, 0.96);
+        border-color: rgba(253, 186, 116, 0.9);
+    }
+
+    .controls .zoom-group.is-expanded > .btn:not(.toggle-btn) > span {
+        background: rgba(29, 78, 216, 0.96);
+        border-color: rgba(147, 197, 253, 0.9);
+    }
+
+    .controls .more-group.is-expanded > .btn:not(.toggle-btn) > span {
+        background: rgba(51, 65, 85, 0.96);
+        border-color: rgba(203, 213, 225, 0.9);
+    }
+
+    .controls.is-quick-mode .content-group.is-expanded > .btn:not(.toggle-btn) > span,
+    .controls.is-quick-mode .draw-group.is-expanded > .btn:not(.toggle-btn) > span {
+        right: calc(100% + 6px);
+        left: auto;
+    }
+
+    .controls .toolbar-radio-control {
+        min-width: 42px;
+        flex-direction: column;
+        gap: 3px;
+        padding: 4px;
+    }
+
+    .controls .toolbar-radio-control > label b {
+        width: 34px;
+        padding: 4px 2px;
+        text-align: center;
     }
 
     .toolbar-dock-toggle {

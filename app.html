@@ -6,11 +6,11 @@
     <title>Viance 4/7 1.0.0</title>
     <link rel="manifest" href="./assets/manifest-BDiz6hGs.json" />
     <link rel="shortcut icon" type="image/png" href="./assets/favicon-CiX55uzs.png" />
-    <script type="module" crossorigin src="./assets/app-BvEu4dEl.js"></script>
+    <script type="module" crossorigin src="./assets/app-BDvCpp2i.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/auth-service-o_BECBtr.js">
     <link rel="modulepreload" crossorigin href="./assets/konva-BoNnv-Ev.js">
     <link rel="stylesheet" crossorigin href="./assets/auth-service-DbY95Ndl.css">
-    <link rel="stylesheet" crossorigin href="./assets/app-D7MXwOM1.css">
+    <link rel="stylesheet" crossorigin href="./assets/app-TFDcAciK.css">
   </head>
 
   <body class="auth-pending">
@@ -51,8 +51,8 @@
         </div>
 
         <div class="group-controls autoplay-group">
-          <button class="btn btn-primary toggle-btn" aria-label="Autoplay audio tools" title="Autoplay">
-            <i class="bi bi-music-player-fill"></i><span>Autoplay</span>
+          <button class="btn btn-primary toggle-btn" aria-label="Media playback tools" title="Media Play">
+            <i class="bi bi-music-player-fill"></i><span>Media Play</span>
           </button>
           <button id="auto-play-toggle" type="button" class="btn btn-light"
             aria-label="Start autoplay audio" aria-pressed="false" title="Start autoplay audio">
@@ -64,6 +64,68 @@
             title="Next Page: play all audio then change page">
             <i class="bi bi-chevron-right"></i><span>Next Page</span>
           </button>
+          <label class="toolbar-switch-control form-check form-switch"
+            title="Phát toàn bộ file thay vì chỉ phát đoạn audio của từng icon"
+            data-tooltip="Phát toàn bộ file thay vì chỉ phát đoạn audio của từng icon">
+            <i class="bi bi-play-btn" aria-hidden="true"></i>
+            <span>Full Audio</span>
+            <input id="auto-play-full-audio-toggle" class="form-check-input" type="checkbox"
+              role="switch" aria-label="Phát toàn bộ file audio">
+          </label>
+          <label class="toolbar-switch-control form-check form-switch"
+            title="Tự động phát lặp lại từng file audio được chọn thủ công"
+            data-tooltip="Tự động phát lặp lại từng file audio được chọn thủ công">
+            <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+            <span>Loop Audio</span>
+            <input id="loop-file-toggle" class="form-check-input" type="checkbox"
+              role="switch" aria-label="Loop Audio" checked>
+          </label>
+          <label class="toolbar-switch-control form-check form-switch"
+            title="Hiển thị phần tiếng Anh của subtitle"
+            data-tooltip="Hiển thị phần tiếng Anh của subtitle">
+            <i class="bi bi-chat-square-text-fill" aria-hidden="true"></i>
+            <span>Subtitle EN</span>
+            <input id="subtitle-show-primary" class="form-check-input" type="checkbox"
+              role="switch" aria-label="Hiển thị subtitle Tiếng Anh" checked>
+          </label>
+          <label class="toolbar-switch-control form-check form-switch"
+            title="Hiển thị phần tiếng Việt của subtitle"
+            data-tooltip="Hiển thị phần tiếng Việt của subtitle">
+            <i class="bi bi-chat-square-text" aria-hidden="true"></i>
+            <span>Subtitle VI</span>
+            <input id="subtitle-show-translation" class="form-check-input" type="checkbox"
+              role="switch" aria-label="Hiển thị subtitle Tiếng Việt">
+          </label>
+          <label class="toolbar-switch-control form-check form-switch"
+            title="Highlight từng từ Tiếng Anh theo âm thanh"
+            data-tooltip="Highlight từng từ Tiếng Anh theo âm thanh">
+            <i class="toolbar-option-icon karaoke-menu-icon" aria-hidden="true"></i>
+            <span>Highlight</span>
+            <input id="subtitle-word-highlight" class="form-check-input" type="checkbox"
+              role="switch" aria-label="Highlight từng từ Tiếng Anh" checked>
+          </label>
+          <div class="toolbar-switch-control toolbar-radio-control"
+            role="radiogroup" aria-label="Vị trí subtitle"
+            title="Chọn vị trí hiển thị subtitle"
+            data-tooltip="Chọn vị trí hiển thị subtitle">
+            <i class="toolbar-option-icon subtitle-location-menu-icon" aria-hidden="true"></i>
+            <span>Vị trí</span>
+            <label title="Trên cùng" data-tooltip="Hiển thị subtitle ở trên cùng">
+              <input type="radio" name="subtitle-position" value="top"
+                aria-label="Hiển thị subtitle ở trên cùng">
+              <b><span class="subtitle-position-icon is-top" aria-hidden="true"></span></b>
+            </label>
+            <label title="Giữa" data-tooltip="Hiển thị subtitle ở giữa">
+              <input type="radio" name="subtitle-position" value="center" checked
+                aria-label="Hiển thị subtitle ở giữa">
+              <b><span class="subtitle-position-icon is-center" aria-hidden="true"></span></b>
+            </label>
+            <label title="Dưới cùng" data-tooltip="Hiển thị subtitle ở dưới cùng">
+              <input type="radio" name="subtitle-position" value="bottom"
+                aria-label="Hiển thị subtitle ở dưới cùng">
+              <b><span class="subtitle-position-icon is-bottom" aria-hidden="true"></span></b>
+            </label>
+          </div>
         </div>
 
         <div class="group-controls more-group">
@@ -78,7 +140,7 @@
         <i class="bi bi-gear"></i><span>Tools</span>
       </button>
       <div id="toolbar-status" class="toolbar-status" aria-live="polite">
-        <span id="active-tool-status" hidden>Ready</span><button id="zoom-status" type="button"
+        <button id="active-tool-status" type="button" aria-label="Drawing is inactive" hidden disabled>Ready</button><button id="zoom-status" type="button"
           aria-label="Zoom is 100%" title="Zoom is already reset" disabled>100%</button>
         <button id="save-status" type="button" class="is-saved" aria-label="Canvas is saved" disabled>Saved</button>
       </div>
@@ -144,30 +206,6 @@
                 <input id="select_color" type="text" class="coloris instance1" value="Tomato" data-target="window" />
               </div>
             </div>
-
-            <fieldset class="subtitle-settings">
-              <legend>Subtitle</legend>
-              <div class="subtitle-toggle-options">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="subtitle-show-primary" checked>
-                  <label class="form-check-label" for="subtitle-show-primary">Hiển thị Tiếng Anh</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="subtitle-show-translation">
-                  <label class="form-check-label" for="subtitle-show-translation">Hiển thị Tiếng Việt</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="subtitle-word-highlight" checked>
-                  <label class="form-check-label" for="subtitle-word-highlight">Highlight từng từ Tiếng Anh</label>
-                </div>
-              </div>
-              <div class="subtitle-position-options" role="radiogroup" aria-label="Vị trí subtitle">
-                <span>Vị trí:</span>
-                <label><input type="radio" name="subtitle-position" value="top"> Trên cùng</label>
-                <label><input type="radio" name="subtitle-position" value="center" checked> Giữa</label>
-                <label><input type="radio" name="subtitle-position" value="bottom"> Dưới cùng</label>
-              </div>
-            </fieldset>
 
             <div class="dark-mode-row">
               <div class="form-check form-switch">
