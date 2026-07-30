@@ -148,6 +148,25 @@ body.auth-pending {
 .app-dialog p { margin: 0; color: #475569; line-height: 1.5; }
 .app-dialog-actions { display: flex; justify-content: center; gap: 10px; margin-top: 22px; }
 .app-dialog-actions .btn { min-width: 104px; border-radius: 10px; }
+.app-choice-dialog { width: min(520px, 100%); }
+.app-choice-dialog .app-dialog-actions { flex-wrap: wrap; }
+.app-choice-dialog .app-dialog-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+@media (max-width: 600px) {
+    .app-choice-dialog .app-dialog-actions {
+        flex-direction: column;
+    }
+
+    .app-choice-dialog .app-dialog-actions .btn {
+        width: 100%;
+    }
+}
+
 .app-text-input-dialog {
     width: min(520px, 100%);
 }
