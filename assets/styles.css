@@ -549,6 +549,8 @@ html[data-theme="dark"] .lesson-radio:checked + .lesson-label {
 }
 
 .subtitle-translation {
+    display: block;
+    margin-top: 4px;
     color: #fff1b8;
     font-size: 0.8em;
     font-weight: 700;
@@ -556,12 +558,15 @@ html[data-theme="dark"] .lesson-radio:checked + .lesson-label {
 }
 
 .subtitle-primary {
+    display: block;
     color: #fffdf7;
     font-weight: 800;
 }
 
 #subtitle-text {
     display: inline-block;
+    position: relative;
+    box-sizing: border-box;
     padding: 9px 16px;
     border: 2px solid rgba(255, 255, 255, 0.58);
     border-radius: 16px;
@@ -1247,6 +1252,10 @@ html[data-theme="dark"] .form-check-input:checked + .form-check-label {
     display: none;
 }
 
+body.subtitle-is-visible .page-navigation {
+    display: none;
+}
+
 /* Buttons positioned on the sides */
 .side-btn {
     position: static;
@@ -1644,7 +1653,30 @@ select:disabled {
 }
 
 #subtitle-overlay {
+  z-index: 8 !important;
+  pointer-events: none;
+  max-height: 80dvh !important;
   transition: all 0.2s ease !important; /* ✅ THÊM TRANSITION SMOOTH */
+}
+
+#subtitle-text {
+  height: auto;
+  max-height: 80dvh;
+}
+
+@media (max-width: 768px) {
+  #subtitle-overlay {
+    width: 85vw !important;
+    max-width: 85vw !important;
+    height: auto !important;
+    max-height: 80dvh !important;
+  }
+
+  #subtitle-text {
+    width: 100%;
+    height: auto;
+    max-height: 80dvh;
+  }
 }
 
 .nav-chevron-up {
@@ -1752,10 +1784,14 @@ html[data-theme="dark"] .page-number-link.is-current:disabled {
         right: auto;
         left: 50%;
         top: auto;
-        bottom: calc(max(12px, env(safe-area-inset-bottom)) + 50px);
+        bottom: max(12px, env(safe-area-inset-bottom));
         transform: translateX(-50%);
         flex-direction: row;
         gap: 3px;
+    }
+
+    body.toolbar-is-open .page-navigation {
+        display: none;
     }
 
     .side-page-numbers {
