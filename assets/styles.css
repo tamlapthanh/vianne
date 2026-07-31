@@ -8,8 +8,9 @@
     --dark-control-text: #17210f;
     --dark-control-border: #9fa8e8;
     --subtitle-word-current: #ffea00;
-    --subtitle-word-past: #ffe4ed;
+    --subtitle-word-past: #cbd5e1;
     --subtitle-word-upcoming: #fffdf7;
+    --floating-control-right: max(12px, env(safe-area-inset-right));
 }
 
 body {
@@ -731,7 +732,7 @@ html[data-theme="dark"] .form-check-input:checked + .form-check-label {
 
 .toolbar-dock-toggle {
     position: fixed;
-    right: max(12px, env(safe-area-inset-right));
+    right: var(--floating-control-right);
     bottom: max(12px, env(safe-area-inset-bottom));
     z-index: 31;
     min-width: 44px;
@@ -789,7 +790,7 @@ html[data-theme="dark"] .form-check-input:checked + .form-check-label {
 
 .toolbar-status {
     position: fixed;
-    right: max(12px, env(safe-area-inset-right));
+    right: var(--floating-control-right);
     bottom: calc(max(12px, env(safe-area-inset-bottom)) + 44px);
     z-index: 29;
     display: flex;
@@ -851,9 +852,23 @@ html[data-theme="dark"] .form-check-input:checked + .form-check-label {
     background: rgba(220, 252, 231, 0.92);
 }
 
+@keyframes unsavedAttention {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 2px 8px rgba(154, 52, 18, 0.18);
+    }
+    50% {
+        transform: translateY(-1px) scale(1.06);
+        box-shadow:
+            0 3px 10px rgba(154, 52, 18, 0.28),
+            0 0 0 4px rgba(251, 146, 60, 0.2);
+    }
+}
+
 .toolbar-status #save-status.is-unsaved {
     color: #9a3412;
     background: rgba(255, 237, 213, 0.94);
+    animation: unsavedAttention 1.4s ease-in-out infinite;
 }
 
 .toolbar-status #save-status.is-saving {
@@ -864,6 +879,13 @@ html[data-theme="dark"] .form-check-input:checked + .form-check-label {
 .toolbar-status #save-status.is-error {
     color: #b91c1c;
     background: rgba(254, 226, 226, 0.94);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .toolbar-status #save-status.is-unsaved {
+        animation: none;
+        box-shadow: 0 0 0 2px rgba(251, 146, 60, 0.38);
+    }
 }
 
 .controls .btn:disabled {
@@ -1449,6 +1471,10 @@ select:disabled {
 
 /* Mobile: nhỏ hơn */
 @media (max-width: 768px) {
+    :root {
+        --floating-control-right: 8px;
+    }
+
     .controls {
         left: 50%;
         width: auto;
@@ -1574,7 +1600,7 @@ select:disabled {
     }
 
     .toolbar-dock-toggle {
-        right: 8px;
+        right: var(--floating-control-right);
         width: 40px;
         min-width: 40px;
         height: 40px;
