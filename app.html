@@ -4,14 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Viance 4/7 1.0.0</title>
-    <link rel="manifest" href="./assets/manifest-BDhN9wLn.json" />
+    <meta name="theme-color" content="#ff6b9d" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <link rel="manifest" href="./manifest.json"  />
+    <link rel="apple-touch-icon" href="./assets/pwa-icon-192-Dr_TuVES.png" />
     <link rel="shortcut icon" type="image/png" href="./assets/favicon-CiX55uzs.png" />
-    <script type="module" crossorigin src="./assets/app-BffGUWAh.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/auth-service-D8QqmMEG.js">
+    <script type="module" crossorigin src="./assets/app-j2KMAplx.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/pwa-controller-rMnhk9Jt.js">
     <link rel="modulepreload" crossorigin href="./assets/konva-BoNnv-Ev.js">
     <link rel="modulepreload" crossorigin href="./assets/subtitle-_lON0697.js">
-    <link rel="stylesheet" crossorigin href="./assets/auth-service-DxGk1xJj.css">
-    <link rel="stylesheet" crossorigin href="./assets/app-DqzYxAjk.css">
+    <link rel="stylesheet" crossorigin href="./assets/pwa-controller-ClOetiHv.css">
+    <link rel="stylesheet" crossorigin href="./assets/app-0F9JfNO6.css">
   </head>
 
   <body class="auth-pending">
@@ -128,7 +133,10 @@
         <div class="group-controls more-group">
           <button id="setting" class="btn btn-primary toggle-btn" aria-label="More options" title="More"><i class="bi bi-three-dots"></i><span>More</span></button>
           <button id="settings-open" class="btn btn-light" data-modal-target="#settingsModal" aria-label="Choose lesson or page" title="Lessons"><i class="bi bi-book-open"></i><span>Lessons</span></button>
-          <button id="shortcuts-open" class="btn btn-light" data-modal-target="#shortcutsModal" aria-label="Show keyboard shortcuts" title="Shortcuts"><i class="bi bi-keyboard"></i><span>Shortcuts</span></button>
+          <button type="button" class="btn btn-light" data-pwa-install hidden
+            aria-label="Install Vianne App" title="Install App">
+            <i class="bi bi-download"></i><span>Install App</span>
+          </button>
           <button id="logout" class="btn btn-light text-danger" aria-label="Log out" title="Log out"><i class="bi bi-box-arrow-left"></i><span>Logout</span></button>
         </div>
       </nav>
@@ -214,34 +222,10 @@
                 <label class="form-check-label" for="tv-lite-mode-toggle">TV Lite mode</label>
               </div>
             </div>
-
-            <br />
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-modal-dismiss > Close </button>
-            </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="shortcutsModal" tabindex="-1" aria-labelledby="shortcutsModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title" id="shortcutsModalLabel">Keyboard shortcuts</h3>
-            <button type="button" class="btn-close" data-modal-dismiss aria-label="Close"></button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-modal-dismiss > Close </button>
           </div>
-          <div class="modal-body shortcut-list">
-            <div><kbd>T</kbd><span>Add Text</span></div>
-            <div><kbd>R</kbd><span>Add Rectangle</span></div>
-            <div><kbd>D</kbd><span>Start/finish Drawing</span></div>
-            <div><span><kbd>Ctrl</kbd> + <kbd>Z</kbd></span><span>Undo</span></div>
-            <div><span><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd></span><span>Redo</span></div>
-            <div><kbd>Delete</kbd><span>Delete selected Line</span></div>
-            <div><span><kbd>←</kbd> / <kbd>→</kbd></span><span>Previous/Next page</span></div>
-            <div><kbd>Esc</kbd><span>Close active tools</span></div>
-          </div>
-          <div class="modal-footer"><button type="button" class="btn btn-primary" data-modal-dismiss>Close</button></div>
         </div>
       </div>
     </div>

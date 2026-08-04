@@ -1,0 +1,28 @@
+{
+  "id": "./",
+  "name": "Vianne English",
+  "short_name": "Vianne",
+  "description": "Ứng dụng học và thực hành tiếng Anh.",
+  "lang": "vi",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "background_color": "#ffc3e0",
+  "theme_color": "#ff6b9d",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "./assets/icons/pwa-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icons/pwa-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

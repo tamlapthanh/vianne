@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Vianne App 4.7.1</title>
-    <link rel="manifest" href="./assets/manifest-BDhN9wLn.json" />
+    <meta name="theme-color" content="#ff6b9d">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="manifest" href="./manifest.json"  />
+    <link rel="apple-touch-icon" href="./assets/pwa-icon-192-Dr_TuVES.png">
     <style>
         body {
             /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
@@ -70,9 +75,9 @@
       }
 
     </style>
-  <script type="module" crossorigin src="./assets/index-DRZ3WTjp.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/auth-service-D8QqmMEG.js">
-  <link rel="stylesheet" crossorigin href="./assets/auth-service-DxGk1xJj.css">
+  <script type="module" crossorigin src="./assets/index-Z4GRhJhQ.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/pwa-controller-rMnhk9Jt.js">
+  <link rel="stylesheet" crossorigin href="./assets/pwa-controller-ClOetiHv.css">
 </head>
 <body>
     <div class="login-container">
@@ -97,6 +102,10 @@
             <div class="alert alert-danger d-none" id="errorMessage"></div>
             <button type="submit" class="btn btn-primary w-100">Login</button>
         </form>
+        <button type="button" class="btn btn-light w-100 mt-3" data-pwa-install hidden
+                aria-label="Install Vianne App" title="Install Vianne App">
+          Install Vianne App
+        </button>
     </div>
 
 </body>
