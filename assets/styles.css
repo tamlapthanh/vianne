@@ -1775,6 +1775,28 @@ html[data-theme="dark"] .page-number-link.is-current:disabled {
     background: #a5b4fc;
 }
 
+.page-number-link.is-complete,
+.page-number-link.is-complete:disabled {
+    color: #fff;
+    border-color: #16a34a;
+    background: #22c55e;
+    box-shadow: 0 2px 7px rgba(22, 163, 74, 0.3);
+    opacity: 1;
+}
+
+.page-number-link.is-complete:hover {
+    color: #fff;
+    border-color: #15803d;
+    background: #16a34a;
+}
+
+.page-number-link.is-current.is-complete,
+.page-number-link.is-current.is-complete:disabled {
+    box-shadow:
+        0 2px 7px rgba(22, 163, 74, 0.32),
+        0 0 0 2px rgba(255, 255, 255, 0.92);
+}
+
 
 .canvas-context-toolbar {
     position: fixed;

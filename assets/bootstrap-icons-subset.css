@@ -24,6 +24,7 @@
 .bi-cloud-arrow-up-fill { --bi-icon: url("./icons/cloud-arrow-up-fill.svg"); }
 .bi-exclamation-triangle-fill { --bi-icon: url("./icons/exclamation-triangle-fill.svg"); }
 .bi-fullscreen { --bi-icon: url("./icons/fullscreen.svg"); }
+.bi-fullscreen-exit { --bi-icon: url("./icons/fullscreen-exit.svg"); }
 .bi-gear { --bi-icon: url("./icons/gear.svg"); }
 .bi-hand-index { --bi-icon: url("./icons/hand-index.svg"); }
 .bi-list-ol { --bi-icon: url("./icons/list-ol.svg"); }
