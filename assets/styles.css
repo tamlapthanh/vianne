@@ -192,11 +192,26 @@ body.auth-pending {
 .vocabulary-dialog-header h2 { margin: 0; font-size: 21px; }
 #vocabulary-progress { font-weight: 700; color: #6d28d9; }
 
+.vocabulary-card-stage {
+    display: grid;
+    grid-template-columns: 46px minmax(0, 1fr) 46px;
+    align-items: center;
+    gap: 8px;
+    padding: 16px;
+}
+
+.vocabulary-card-column {
+    display: grid;
+    min-width: 0;
+    place-items: center;
+    gap: 7px;
+}
+
 .vocabulary-card {
     display: block;
-    width: calc(100% - 32px);
+    width: 100%;
     min-height: 260px;
-    margin: 16px;
+    margin: 0;
     padding: 18px;
     overflow: hidden;
     border: 2px solid #c4b5fd;
@@ -206,11 +221,44 @@ body.auth-pending {
     cursor: pointer;
 }
 
+.vocabulary-card-nav {
+    width: 42px;
+    height: 54px;
+    padding: 0;
+    border: 1px solid #c4b5fd;
+    border-radius: 14px;
+    color: #5b21b6;
+    background: #f5f3ff;
+    font-size: 20px;
+}
+
+.vocabulary-card-nav:hover,
+.vocabulary-card-nav:focus-visible {
+    border-color: #7c3aed;
+    color: #fff;
+    background: #7c3aed;
+}
+
+.vocabulary-card-nav:disabled { opacity: 0.32; }
+
 .vocabulary-card:focus-visible { outline: 4px solid rgba(124, 58, 237, 0.28); }
 .vocabulary-card-face { display: grid; min-height: 220px; place-items: center; gap: 12px; }
 .vocabulary-card canvas { display: block; max-width: 100%; max-height: 52vh; border-radius: 10px; object-fit: contain; }
 .vocabulary-card strong { font-size: clamp(22px, 4vw, 36px); line-height: 1.3; }
-.vocabulary-card small { color: #64748b; }
+.vocabulary-card-hint { color: #64748b; font-size: 11px; text-align: center; }
+.vocabulary-card-column .vocabulary-english {
+    color: #1e3a8a;
+    font-size: clamp(18px, 2.5vw, 26px);
+    line-height: 1.35;
+    text-align: center;
+}
+.vocabulary-inline-translation {
+    color: #7c3aed;
+    font-size: clamp(16px, 2.2vw, 22px);
+    font-weight: 650;
+    line-height: 1.35;
+    text-align: center;
+}
 .vocabulary-card-meaning { align-content: center; color: #5b21b6; }
 .vocabulary-card.is-flipped { background: linear-gradient(145deg, #f5f3ff, #ecfeff); }
 
@@ -222,6 +270,30 @@ body.auth-pending {
 }
 
 .vocabulary-dialog-actions .btn { min-height: 46px; display: inline-flex; align-items: center; justify-content: center; gap: 7px; }
+.vocabulary-dialog-actions .vocabulary-page-button { font-size: 13px; }
+.vocabulary-dialog-actions .vocabulary-page-button i { font-size: 12px; }
+#vocabulary-previous-page-button {
+    border-color: #93c5fd;
+    color: #1d4ed8;
+    background: #dbeafe;
+}
+#vocabulary-next-page-button {
+    border-color: #c4b5fd;
+    color: #6d28d9;
+    background: #ede9fe;
+}
+#vocabulary-previous-page-button:hover,
+#vocabulary-previous-page-button:focus-visible {
+    border-color: #2563eb;
+    color: #fff;
+    background: #2563eb;
+}
+#vocabulary-next-page-button:hover,
+#vocabulary-next-page-button:focus-visible {
+    border-color: #7c3aed;
+    color: #fff;
+    background: #7c3aed;
+}
 #vocabulary-play-button.is-playing { border-color: #22c55e; background: #16a34a; color: #fff; }
 
 html[data-theme="dark"] .vocabulary-dialog {
@@ -232,12 +304,27 @@ html[data-theme="dark"] .vocabulary-dialog {
 
 html[data-theme="dark"] .vocabulary-dialog-header { border-color: #334155; }
 html[data-theme="dark"] .vocabulary-card { color: #e2e8f0; background: linear-gradient(145deg, #312e81, #172554); }
-html[data-theme="dark"] .vocabulary-card small { color: #cbd5e1; }
+html[data-theme="dark"] .vocabulary-card-hint { color: #cbd5e1; }
+html[data-theme="dark"] .vocabulary-card-column .vocabulary-english { color: #bfdbfe; }
+html[data-theme="dark"] .vocabulary-inline-translation { color: #ddd6fe; }
+html[data-theme="dark"] .vocabulary-card-nav { border-color: #64748b; color: #ddd6fe; background: #312e81; }
+html[data-theme="dark"] #vocabulary-previous-page-button { border-color: #3b82f6; color: #bfdbfe; background: #1e3a8a; }
+html[data-theme="dark"] #vocabulary-next-page-button { border-color: #8b5cf6; color: #ddd6fe; background: #4c1d95; }
+
+@media (min-width: 900px) {
+    .vocabulary-dialog {
+        width: min(1080px, calc(100vw - 64px));
+    }
+    .vocabulary-card { min-height: 320px; }
+    .vocabulary-card-face { min-height: 280px; }
+}
 
 @media (max-width: 600px) {
     .vocabulary-dialog-overlay { padding: 8px; }
     .vocabulary-dialog { max-height: calc(100vh - 16px); }
-    .vocabulary-card { width: calc(100% - 20px); min-height: 220px; margin: 10px; padding: 12px; }
+    .vocabulary-card-stage { grid-template-columns: 36px minmax(0, 1fr) 36px; gap: 5px; padding: 10px; }
+    .vocabulary-card { min-height: 220px; padding: 12px; }
+    .vocabulary-card-nav { width: 34px; height: 48px; font-size: 17px; }
     .vocabulary-dialog-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 0 10px 12px; }
 }
 .app-choice-dialog { width: min(520px, 100%); }
