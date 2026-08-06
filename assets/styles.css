@@ -264,7 +264,7 @@ body.auth-pending {
 
 .vocabulary-dialog-actions {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 10px;
     padding: 0 16px 18px;
 }
@@ -1467,7 +1467,7 @@ html[data-theme="dark"] .form-check-input:checked + .form-check-label {
     display: none !important;
 }
 
-body.subtitle-is-visible .page-navigation {
+body.subtitle-is-visible:not(.vocabulary-dialog-open) .page-navigation {
     display: none;
 }
 
@@ -1654,6 +1654,56 @@ select:disabled {
 
 #audio-control-panel #acp-replay i {
     color: currentColor !important;
+}
+
+#audio-control-panel .acp-learning-modes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px;
+    padding: 8px 8px 0;
+}
+
+#audio-control-panel .acp-learning-modes .btn {
+    display: inline-flex;
+    min-width: 0;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+body.vocabulary-dialog-open .autoplay-group .page-playback-option {
+    display: none !important;
+}
+
+.vocabulary-loop-notice {
+    min-height: 18px;
+    color: #16a34a;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.vocabulary-progress-track {
+    height: 4px;
+    overflow: hidden;
+    background: #e2e8f0;
+}
+
+.vocabulary-progress-track > span {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #7c3aed, #06b6d4);
+    transition: width 0.2s ease;
+}
+
+@media (max-width: 576px) {
+    #audio-control-panel .acp-learning-modes {
+        grid-template-columns: 1fr 1fr;
+        padding: 6px 6px 0;
+    }
+
 }
 
 #speedValue {
