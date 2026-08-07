@@ -74,6 +74,267 @@ body.auth-pending {
     }
 }
 
+/* ========== SKELETON LOADING ========== */
+.skeleton-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(2px);
+}
+
+.skeleton-overlay.is-visible {
+    display: flex;
+}
+
+.skeleton-page {
+    position: relative;
+    width: min(90vw, 1200px);
+    height: min(85vh, 800px);
+    border-radius: 16px;
+    overflow: hidden;
+    background: #e2e8f0;
+    box-shadow: 0 12px 40px rgba(15, 23, 42, 0.12);
+}
+
+.skeleton-page::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.55) 50%,
+        transparent 100%
+    );
+    animation: skeletonShimmer 1.8s ease-in-out infinite;
+}
+
+@keyframes skeletonShimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.skeleton-icon-row {
+    position: absolute;
+    display: flex;
+    gap: 12px;
+}
+
+.skeleton-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #cbd5e1;
+}
+
+.skeleton-icon:nth-child(odd) {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+}
+
+html[data-theme="dark"] .skeleton-overlay {
+    background: rgba(17, 23, 13, 0.92);
+}
+
+html[data-theme="dark"] .skeleton-page {
+    background: #26321d;
+}
+
+html[data-theme="dark"] .skeleton-icon {
+    background: #3c4b24;
+}
+
+/* ========== PAGE TRANSITION ========== */
+#canvas .konvajs-content {
+    transition: opacity 0.28s ease;
+}
+
+#canvas.is-page-loading .konvajs-content {
+    opacity: 0.45;
+}
+
+/* ========== BUTTON FEEDBACK ========== */
+button:active:not(:disabled),
+.btn:active:not(:disabled) {
+    transform: scale(0.96);
+    transition: transform 0.08s ease;
+}
+
+.controls .btn:active:not(:disabled) {
+    transform: scale(0.94);
+}
+
+.toolbar-dock-toggle:active:not(:disabled) {
+    transform: scale(0.93);
+}
+
+.side-btn:active:not(:disabled) {
+    transform: scale(0.9);
+}
+
+.page-number-link:active:not(:disabled) {
+    transform: scale(0.88);
+}
+
+/* ========== TOOLBAR STAGGER ANIMATION ========== */
+.group-controls.is-expanded .btn:not(.toggle-btn),
+.group-controls.is-expanded .toolbar-switch-control {
+    animation: toolbarItemIn 0.22s ease-out both;
+}
+
+.group-controls.is-expanded .btn:not(.toggle-btn):nth-child(2),
+.group-controls.is-expanded .toolbar-switch-control:nth-child(2) { animation-delay: 0.02s; }
+.group-controls.is-expanded .btn:not(.toggle-btn):nth-child(3),
+.group-controls.is-expanded .toolbar-switch-control:nth-child(3) { animation-delay: 0.04s; }
+.group-controls.is-expanded .btn:not(.toggle-btn):nth-child(4),
+.group-controls.is-expanded .toolbar-switch-control:nth-child(4) { animation-delay: 0.06s; }
+.group-controls.is-expanded .btn:not(.toggle-btn):nth-child(5),
+.group-controls.is-expanded .toolbar-switch-control:nth-child(5) { animation-delay: 0.08s; }
+.group-controls.is-expanded .btn:not(.toggle-btn):nth-child(6),
+.group-controls.is-expanded .toolbar-switch-control:nth-child(6) { animation-delay: 0.10s; }
+.group-controls.is-expanded .btn:not(.toggle-btn):nth-child(7),
+.group-controls.is-expanded .toolbar-switch-control:nth-child(7) { animation-delay: 0.12s; }
+.group-controls.is-expanded .btn:not(.toggle-btn):nth-child(8),
+.group-controls.is-expanded .toolbar-switch-control:nth-child(8) { animation-delay: 0.14s; }
+.group-controls.is-expanded .btn:not(.toggle-btn):nth-child(9),
+.group-controls.is-expanded .toolbar-switch-control:nth-child(9) { animation-delay: 0.16s; }
+.group-controls.is-expanded .btn:not(.toggle-btn):nth-child(10),
+.group-controls.is-expanded .toolbar-switch-control:nth-child(10) { animation-delay: 0.18s; }
+
+@keyframes toolbarItemIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px) scale(0.92);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ========== CONTEXT TOOLBAR ANIMATION ========== */
+.canvas-context-toolbar {
+    animation: contextToolbarIn 0.18s ease-out;
+}
+
+@keyframes contextToolbarIn {
+    from {
+        opacity: 0;
+        transform: scale(0.88) translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* ========== PAGE NUMBER GLOW ========== */
+.page-number-link.is-current,
+.page-number-link.is-current:disabled {
+    animation: pageNumberGlow 2.4s ease-in-out infinite;
+}
+
+@keyframes pageNumberGlow {
+    0%, 100% {
+        box-shadow: 0 2px 7px rgba(37, 99, 235, 0.24);
+    }
+    50% {
+        box-shadow: 0 2px 14px rgba(37, 99, 235, 0.48), 0 0 0 3px rgba(96, 165, 250, 0.22);
+    }
+}
+
+.page-number-link.is-current.is-complete,
+.page-number-link.is-current.is-complete:disabled {
+    animation: pageNumberGlowComplete 2.4s ease-in-out infinite;
+}
+
+@keyframes pageNumberGlowComplete {
+    0%, 100% {
+        box-shadow: 0 2px 7px rgba(22, 163, 74, 0.32), 0 0 0 2px rgba(255, 255, 255, 0.92);
+    }
+    50% {
+        box-shadow: 0 2px 16px rgba(22, 163, 74, 0.5), 0 0 0 4px rgba(34, 197, 94, 0.3);
+    }
+}
+
+/* ========== AUTO-PLAY PROGRESS BAR ========== */
+.autoplay-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10050;
+    width: 100%;
+    height: 3px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.autoplay-progress.is-active {
+    opacity: 1;
+}
+
+.autoplay-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #7c3aed, #06b6d4, #22c55e);
+    background-size: 200% 100%;
+    border-radius: 0 2px 2px 0;
+    transition: width 0.3s ease;
+    animation: progressBarShimmer 1.6s linear infinite;
+}
+
+@keyframes progressBarShimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: 0 0; }
+}
+
+/* ========== MOBILE NAVIGATION IMPROVEMENTS ========== */
+@media (max-width: 768px) {
+    .page-navigation {
+        transition: transform 0.22s ease, opacity 0.22s ease;
+    }
+
+    body.toolbar-is-open .page-navigation {
+        transform: translateX(-50%) translateY(80px);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .side-page-numbers {
+        max-width: min(280px, calc(100vw - 100px));
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding: 0 4px;
+    }
+
+    .side-page-numbers::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .group-controls.is-expanded .btn:not(.toggle-btn),
+    .group-controls.is-expanded .toolbar-switch-control,
+    .canvas-context-toolbar,
+    .page-number-link.is-current,
+    .page-number-link.is-current.is-complete,
+    .skeleton-page::after,
+    .autoplay-progress-bar {
+        animation: none !important;
+    }
+
+    button:active:not(:disabled),
+    .btn:active:not(:disabled) {
+        transform: none !important;
+    }
+}
+
 #canvas-container {
     position: relative;
     width: 100vw;
@@ -325,8 +586,14 @@ html[data-theme="dark"] #vocabulary-next-page-button { border-color: #8b5cf6; co
     .vocabulary-card-stage { grid-template-columns: 36px minmax(0, 1fr) 36px; gap: 5px; padding: 10px; }
     .vocabulary-card { min-height: 220px; padding: 12px; }
     .vocabulary-card-nav { width: 34px; height: 48px; font-size: 17px; }
-    .vocabulary-dialog-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 0 10px 12px; }
+    .vocabulary-dialog-actions { grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 0 10px 12px; }
+    /* Mobile: chỉ hiển thị icon, ẩn text và thu nhỏ nút cho gọn */
+    .vocabulary-dialog-actions .btn { min-width: 40px; min-height: 40px; padding: 5px; }
+    .vocabulary-dialog-actions .btn span { display: none; }
+    .vocabulary-dialog-actions .btn i { font-size: 13px; }
+
 }
+
 .app-choice-dialog { width: min(520px, 100%); }
 .app-choice-dialog .app-dialog-actions { flex-wrap: wrap; }
 .app-choice-dialog .app-dialog-actions .btn {
