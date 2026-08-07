@@ -294,6 +294,29 @@ button:active:not(:disabled),
 }
 
 /* ========== MOBILE NAVIGATION IMPROVEMENTS ========== */
+@media (max-width: 1199px) {
+    .page-navigation.is-landscape-page {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .page-navigation.is-landscape-page .side-page-numbers {
+        flex-direction: column;
+        max-width: none;
+        max-height: min(280px, calc(100dvh - 100px));
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .page-navigation.is-landscape-page .nav-chevron-up {
+        transform: rotate(-90deg);
+    }
+
+    .page-navigation.is-landscape-page .nav-chevron-down {
+        transform: rotate(90deg);
+    }
+}
+
 @media (max-width: 768px) {
     .page-navigation {
         transition: transform 0.22s ease, opacity 0.22s ease;
