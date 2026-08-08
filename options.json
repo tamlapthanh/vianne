@@ -22,7 +22,6 @@
         {
             "id": "radio_student47_2_book",
             "data_type": "student47_2",
-            "resource_source": "https",
             "label": "Student book 4 (tập 2)",
             "max": 77,
             "min": 1,
@@ -46,7 +45,6 @@
         {
             "id": "radio_student_37_book",
             "data_type": "student37",
-            "resource_source": "https",
             "label": "Student book 3",
             "max": 131,
             "min": 1,
@@ -58,7 +56,6 @@
         {
             "id": "radio_work_37_book",
             "data_type": "work37",
-            "resource_source": "https",
             "label": "Work book 3",
             "max": 96,
             "min": 1,
@@ -70,7 +67,6 @@
         {
             "id": "radio_btbt_37_book",
             "data_type": "btbt37",
-            "resource_source": "https",
             "label": "BT bổ trợ 3",
             "max": 140,
             "min": 1,
@@ -82,7 +78,6 @@
         {
             "id": "radio_student_book",
             "data_type": "student",
-            "resource_source": "https",
             "label": "Student book 2",
             "max": 66,
             "min": 1,
@@ -94,7 +89,6 @@
         {
             "id": "radio_work_book",
             "data_type": "work",
-            "resource_source": "https",
             "label": "Workbook 2",
             "max": 65,
             "min": 1,
@@ -106,7 +100,6 @@
         {
             "id": "radio_Young_Children_2_5",
             "data_type": "Young_Children_2_5",
-            "resource_source": "https",
             "label": "Picture Dictionary (2-6)",
             "max": 36,
             "min": 1,
@@ -118,7 +111,6 @@
         {
             "id": "radio_Young_Children_6_12",
             "data_type": "Young_Children_6_12",
-            "resource_source": "https",
             "label": "Picture Dictionary (6-12)",
             "max": 65,
             "min": 1,
@@ -130,7 +122,6 @@
         {
             "id": "radio_word_by_word",
             "data_type": "word_by_word",
-            "resource_source": "https",
             "label": "Word By Word Dictionary",
             "max": 209,
             "min": 1,
@@ -142,7 +133,6 @@
         {
             "id": "radio_dict_book",
             "data_type": "dict",
-            "resource_source": "https",
             "label": "Oxford Dictionary",
             "max": 87,
             "min": 1,
@@ -154,7 +144,6 @@
         {
             "id": "radio_mind_map_35_subjects",
             "data_type": "mind_map_35_subjects",
-            "resource_source": "https",
             "label": "Mind map 35 subjects",
             "max": 35,
             "min": 1,
@@ -166,7 +155,6 @@
         {
             "id": "radio_first_work_sheet",
             "data_type": "first_work_sheet",
-            "resource_source": "https",
             "label": "Vocabulary Work Sheet",
             "max": 14,
             "min": 1,
@@ -178,7 +166,6 @@
         {
             "id": "radio_math",
             "data_type": "math_page",
-            "resource_source": "https",
             "label": "Math Game",
             "group": -1
         }
