@@ -1874,31 +1874,39 @@ select:disabled {
     white-space: normal;
     pointer-events: none;
     opacity: 0;
-    transform: translate(-50%, -4px) scale(0.96);
+    transform: scale(0.96);
     transition: opacity 0.14s ease, transform 0.14s ease;
 }
 
 .app-tooltip::after {
     content: "";
     position: absolute;
-    left: 50%;
+    top: 50%;
     border: 6px solid transparent;
-    transform: translateX(-50%);
+    transform: translateY(-50%);
 }
 
-.app-tooltip[data-placement="top"]::after {
-    top: 100%;
-    border-top-color: #4f46e5;
+.app-tooltip[data-placement="right"] {
+    transform: translateX(-4px) scale(0.96);
 }
 
-.app-tooltip[data-placement="bottom"]::after {
-    bottom: 100%;
-    border-bottom-color: #312e81;
+.app-tooltip[data-placement="right"]::after {
+    right: 100%;
+    border-right-color: #312e81;
+}
+
+.app-tooltip[data-placement="left"] {
+    transform: translateX(4px) scale(0.96);
+}
+
+.app-tooltip[data-placement="left"]::after {
+    left: 100%;
+    border-left-color: #4f46e5;
 }
 
 .app-tooltip.is-visible {
     opacity: 1;
-    transform: translate(-50%, 0) scale(1);
+    transform: translateX(0) scale(1);
 }
 
 .canvas-tooltip {
