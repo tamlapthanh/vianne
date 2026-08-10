@@ -16,7 +16,7 @@
             background: linear-gradient(135deg, #ff6b9d 0%, #ffc3e0 100%);
             /* background: linear-gradient(135deg, #ff0844 0%, #ffb199 100%); */
             /* background: linear-gradient(135deg, #ffa6c1 0%, #ffe5ec 100%); */
-            height: 100vh;
+            min-height: 100dvh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -46,13 +46,21 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: 100dvh;
         align-items: center;
         justify-content: center;
         z-index: 9999;
         /* High z-index to cover all content */
         display: none;
         /* Hidden by default */
+      }
+
+      body.auth-pending .login-container {
+        visibility: hidden;
+      }
+
+      body.auth-pending #spinnerOverlay {
+        display: flex;
       }
 
       /* Icon loading */
@@ -75,17 +83,17 @@
       }
 
     </style>
-  <script type="module" crossorigin src="./assets/index-DjVrxeYD.js"></script>
+  <script type="module" crossorigin src="./assets/index-Dnhgqnmu.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/pwa-controller-E0NJck9d.js">
   <link rel="stylesheet" crossorigin href="./assets/pwa-controller-ClOetiHv.css">
 </head>
-<body>
-    <div class="login-container">
+<body class="auth-pending">
+    <!-- Visible before JavaScript loads, so a restored session never flashes the login form. -->
+    <div class="overlay" id="spinnerOverlay" aria-live="polite">
+      <span class="spinner-icon" role="status" aria-label="Đang kiểm tra đăng nhập"></span>
+    </div>
 
-      <!-- Loading Spinner Overlay -->
-      <div class="overlay" id="spinnerOverlay">
-        <span class="spinner-icon" role="status" aria-label="Loading"></span>
-      </div>
+    <div class="login-container">
 
         <h2 class="login-title">Vianne Login</h2>
         <form id="loginForm">
