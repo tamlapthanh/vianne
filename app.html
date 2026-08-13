@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Viance 4/7 1.0.0</title>
+    <title>Viance 4/7 1.0.1</title>
     <meta name="theme-color" content="#ff6b9d" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -11,12 +11,12 @@
     <link rel="manifest" href="./manifest.json"  />
     <link rel="apple-touch-icon" href="./assets/pwa-icon-192-Dr_TuVES.png" />
     <link rel="shortcut icon" type="image/png" href="./assets/favicon-CiX55uzs.png" />
-    <script type="module" crossorigin src="./assets/app-DPYAbaSo.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/pwa-controller-E0NJck9d.js">
+    <script type="module" crossorigin src="./assets/app-CQYAR9z0.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/pwa-controller-NuTig9oy.js">
     <link rel="modulepreload" crossorigin href="./assets/konva-BoNnv-Ev.js">
     <link rel="modulepreload" crossorigin href="./assets/subtitle-_lON0697.js">
     <link rel="stylesheet" crossorigin href="./assets/pwa-controller-ClOetiHv.css">
-    <link rel="stylesheet" crossorigin href="./assets/app-qdju5bjn.css">
+    <link rel="stylesheet" crossorigin href="./assets/app-DvlfCno1.css">
   </head>
 
   <body class="auth-pending">
@@ -157,12 +157,21 @@
     </div>
 
     <!-- New Buttons with Icons -->
-    <div class="page-navigation" aria-label="Page navigation">
-      <button id="previous_page" class="btn btn-primary side-btn" aria-label="Previous page">
+    <div class="page-navigation page-navigation-left" aria-label="Page navigation on the left">
+      <button class="btn btn-primary side-btn" data-page-direction="previous" aria-label="Previous page">
+        <i class="bi bi-chevron-right nav-chevron-up"></i>
+      </button>
+      <div class="side-page-numbers" aria-label="Page links"></div>
+      <button class="btn btn-primary side-btn" data-page-direction="next" aria-label="Next page">
+        <i class="bi bi-chevron-right nav-chevron-down"></i>
+      </button>
+    </div>
+    <div class="page-navigation page-navigation-right" aria-label="Page navigation on the right">
+      <button id="previous_page" class="btn btn-primary side-btn" data-page-direction="previous" aria-label="Previous page">
         <i class="bi bi-chevron-right nav-chevron-up"></i>
       </button>
       <div class="side-page-numbers" id="page-number" aria-label="Page links"></div>
-      <button id="next_page" class="btn btn-primary side-btn" aria-label="Next page">
+      <button id="next_page" class="btn btn-primary side-btn" data-page-direction="next" aria-label="Next page">
         <i class="bi bi-chevron-right nav-chevron-down"></i>
       </button>
     </div>

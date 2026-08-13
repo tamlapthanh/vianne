@@ -543,7 +543,15 @@ button:active:not(:disabled),
 
 .vocabulary-card:focus-visible { outline: 4px solid rgba(124, 58, 237, 0.28); }
 .vocabulary-card-face { display: grid; height: 100%; min-height: 0; place-items: center; gap: 12px; }
-.vocabulary-card canvas { display: block; max-width: 100%; max-height: 100%; border-radius: 10px; object-fit: contain; }
+.vocabulary-card canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    border-radius: 10px;
+    object-fit: contain;
+}
 .vocabulary-card strong { font-size: clamp(22px, 4vw, 36px); line-height: 1.3; }
 .vocabulary-card-hint { color: #64748b; font-size: 11px; text-align: center; }
 .vocabulary-card-column .vocabulary-english {
@@ -1839,6 +1847,18 @@ html[data-theme="dark"] .form-check-input:checked + .form-check-label {
     backdrop-filter: blur(6px);
 }
 
+.page-navigation-left {
+    display: none;
+}
+
+@media (min-width: 1200px) {
+    .page-navigation-left {
+        display: flex;
+        left: 10px;
+        right: auto;
+    }
+}
+
 .page-navigation.is-hidden-for-mobile-zoom {
     display: none;
 }
@@ -2015,6 +2035,21 @@ select:disabled {
     pointer-events: none;
     z-index: 10000;
     transition: opacity 0.14s ease;
+}
+
+.exercise-hint-tooltip {
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.96);
+    transform-origin: center;
+    transition: opacity 0.14s ease, transform 0.14s ease, visibility 0.14s;
+}
+
+.exercise-hint-tooltip.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
 }
 
 .text-tooltip {

@@ -1,9 +1,46 @@
 {
-    "default_data_type": "student47_1",
+    "default_data_type": "vat_ly_12",
     "data": [
+        {
+            "id": "radio_vat_ly_12_book",
+            "data_type": "vat_ly_12",
+            "access_key": "grade_12",
+            "label": "Vật lý 12 (SGK)",
+            "ASSET_URL": {
+                "IMG_URL": "https://tamlapthanh.github.io/khoi/",
+                "SOUND_URL": "https://tamlapthanh.github.io/khoi/",
+                "VIDEO_URL": "https://tamlapthanh.github.io/khoi/",
+                "JSON_URL": "https://tamlapthanh.github.io/khoi/"
+            },            
+            "max": 122,
+            "min": 1,
+            "current": 1,
+            "fetch": false,
+            "dual_page": true,  
+            "group": 4
+        },          
+        {
+            "id": "radio_vat_ly_12_bt",
+            "data_type": "vat_ly_12_bt",
+            "access_key": "grade_12",
+            "label": "Vật lý 12 (SBT)",
+            "ASSET_URL": {
+                "IMG_URL": "https://tamlapthanh.github.io/khoi/",
+                "SOUND_URL": "https://tamlapthanh.github.io/khoi/",
+                "VIDEO_URL": "https://tamlapthanh.github.io/khoi/",
+                "JSON_URL": "https://tamlapthanh.github.io/khoi/"
+            },               
+            "max": 126,
+            "min": 1,
+            "current": 1,
+            "fetch": false,
+            "dual_page": true,  
+            "group": 4
+        },               
         {
             "id": "radio_student47_1_book",
             "data_type": "student47_1",
+            "access_key": "grade_4",
             "resource_source": "api",
             "ASSET_URL": {
                 "IMG_URL": "https://tamlapthanh.github.io/store_images/",
@@ -22,6 +59,7 @@
         {
             "id": "radio_student47_2_book",
             "data_type": "student47_2",
+            "access_key": "grade_4",
             "label": "Student book 4 (tập 2)",
             "max": 77,
             "min": 1,
@@ -33,6 +71,7 @@
         {
             "id": "radio_student47_bt_book",
             "data_type": "student47_bt",
+            "access_key": "grade_4",
             "resource_source": "api",
             "label": "Work book 4",
             "max": 100,
@@ -45,6 +84,7 @@
         {
             "id": "radio_student_37_book",
             "data_type": "student37",
+            "access_key": "grade_3",
             "label": "Student book 3",
             "max": 131,
             "min": 1,
@@ -56,6 +96,7 @@
         {
             "id": "radio_work_37_book",
             "data_type": "work37",
+            "access_key": "grade_3",
             "label": "Work book 3",
             "max": 96,
             "min": 1,
@@ -67,6 +108,7 @@
         {
             "id": "radio_btbt_37_book",
             "data_type": "btbt37",
+            "access_key": "grade_3",
             "label": "BT bổ trợ 3",
             "max": 140,
             "min": 1,
@@ -78,6 +120,7 @@
         {
             "id": "radio_student_book",
             "data_type": "student",
+            "access_key": "grade_2",
             "label": "Student book 2",
             "max": 66,
             "min": 1,
@@ -89,6 +132,7 @@
         {
             "id": "radio_work_book",
             "data_type": "work",
+            "access_key": "grade_2",
             "label": "Workbook 2",
             "max": 65,
             "min": 1,
@@ -100,6 +144,7 @@
         {
             "id": "radio_Young_Children_2_5",
             "data_type": "Young_Children_2_5",
+            "access_key": "dictionary",
             "label": "Picture Dictionary (2-6)",
             "max": 36,
             "min": 1,
@@ -111,6 +156,7 @@
         {
             "id": "radio_Young_Children_6_12",
             "data_type": "Young_Children_6_12",
+            "access_key": "dictionary",
             "label": "Picture Dictionary (6-12)",
             "max": 65,
             "min": 1,
@@ -122,6 +168,7 @@
         {
             "id": "radio_word_by_word",
             "data_type": "word_by_word",
+            "access_key": "dictionary",
             "label": "Word By Word Dictionary",
             "max": 209,
             "min": 1,
@@ -133,6 +180,7 @@
         {
             "id": "radio_dict_book",
             "data_type": "dict",
+            "access_key": "dictionary",
             "label": "Oxford Dictionary",
             "max": 87,
             "min": 1,
@@ -144,6 +192,7 @@
         {
             "id": "radio_mind_map_35_subjects",
             "data_type": "mind_map_35_subjects",
+            "access_key": "mind_map",
             "label": "Mind map 35 subjects",
             "max": 35,
             "min": 1,
@@ -155,6 +204,7 @@
         {
             "id": "radio_first_work_sheet",
             "data_type": "first_work_sheet",
+            "access_key": "worksheet",
             "label": "Vocabulary Work Sheet",
             "max": 14,
             "min": 1,
@@ -166,6 +216,7 @@
         {
             "id": "radio_math",
             "data_type": "math_page",
+            "access_key": "math",
             "label": "Math Game",
             "group": -1
         }
