@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Viance 4/7 1.0.1</title>
+    <title>Viance 4/7 1.0.2</title>
     <meta name="theme-color" content="#ff6b9d" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -11,12 +11,12 @@
     <link rel="manifest" href="./manifest.json"  />
     <link rel="apple-touch-icon" href="./assets/pwa-icon-192-Dr_TuVES.png" />
     <link rel="shortcut icon" type="image/png" href="./assets/favicon-CiX55uzs.png" />
-    <script type="module" crossorigin src="./assets/app-Crd91dFx.js"></script>
+    <script type="module" crossorigin src="./assets/app-Ces31CRQ.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/pwa-controller-NuTig9oy.js">
     <link rel="modulepreload" crossorigin href="./assets/konva-BoNnv-Ev.js">
     <link rel="modulepreload" crossorigin href="./assets/subtitle-_lON0697.js">
     <link rel="stylesheet" crossorigin href="./assets/pwa-controller-ClOetiHv.css">
-    <link rel="stylesheet" crossorigin href="./assets/app-BeeA35dn.css">
+    <link rel="stylesheet" crossorigin href="./assets/app-NFVIgbgP.css">
   </head>
 
   <body class="auth-pending">
@@ -146,14 +146,16 @@
           <button id="logout" class="btn btn-light text-danger" aria-label="Log out" title="Log out"><i class="bi bi-box-arrow-left"></i><span>Logout</span></button>
         </div>
       </nav>
-      <button id="toolbar-dock-toggle" class="btn btn-primary toolbar-dock-toggle" type="button"
-        aria-label="Hide canvas tools" aria-controls="id_controls" aria-expanded="true" title="Hide tools">
-        <i class="bi bi-gear"></i><span>Tools</span>
-      </button>
-      <div id="toolbar-status" class="toolbar-status" aria-live="polite">
-        <button id="active-tool-status" type="button" aria-label="Drawing is inactive" hidden disabled>Ready</button><button id="zoom-status" type="button"
-          aria-label="Zoom is 100%" title="Zoom is already reset" disabled>100%</button>
-        <button id="save-status" type="button" class="is-saved" aria-label="Canvas is saved" disabled>Saved</button>
+      <div class="toolbar-dock-area">
+        <button id="toolbar-dock-toggle" class="btn btn-primary toolbar-dock-toggle" type="button"
+          aria-label="Hide canvas tools" aria-controls="id_controls" aria-expanded="true" title="Hide tools">
+          <i class="bi bi-gear"></i><span>Tools</span>
+        </button>
+        <div id="toolbar-status" class="toolbar-status" aria-live="polite">
+          <button id="active-tool-status" type="button" aria-label="Drawing is inactive" hidden disabled>Ready</button><button id="zoom-status" type="button"
+            aria-label="Zoom is 100%" title="Zoom is already reset" disabled>100%</button>
+          <button id="save-status" type="button" class="is-saved" aria-label="Canvas is saved" disabled>Saved</button>
+        </div>
       </div>
     </div>
 

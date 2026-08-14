@@ -1326,11 +1326,19 @@ html[data-theme="dark"] .form-check-input:checked + .form-check-label {
     display: none;
 }
 
-.toolbar-dock-toggle {
+.toolbar-dock-area {
     position: fixed;
     right: var(--floating-control-right);
     bottom: max(12px, env(safe-area-inset-bottom));
     z-index: 31;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 5px;
+}
+
+.toolbar-dock-toggle {
+    position: static;
     min-width: 44px;
     height: 40px;
     display: flex;
@@ -1394,9 +1402,7 @@ html[data-theme="dark"] .form-check-input:checked + .form-check-label {
 }
 
 .toolbar-status {
-    position: fixed;
-    right: var(--floating-control-right);
-    bottom: calc(max(12px, env(safe-area-inset-bottom)) + 44px);
+    position: static;
     z-index: 29;
     display: flex;
     gap: 5px;
