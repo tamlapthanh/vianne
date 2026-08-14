@@ -11,12 +11,12 @@
     <link rel="manifest" href="./manifest.json"  />
     <link rel="apple-touch-icon" href="./assets/pwa-icon-192-Dr_TuVES.png" />
     <link rel="shortcut icon" type="image/png" href="./assets/favicon-CiX55uzs.png" />
-    <script type="module" crossorigin src="./assets/app-BlKQ9siv.js"></script>
+    <script type="module" crossorigin src="./assets/app-Crd91dFx.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/pwa-controller-NuTig9oy.js">
     <link rel="modulepreload" crossorigin href="./assets/konva-BoNnv-Ev.js">
     <link rel="modulepreload" crossorigin href="./assets/subtitle-_lON0697.js">
     <link rel="stylesheet" crossorigin href="./assets/pwa-controller-ClOetiHv.css">
-    <link rel="stylesheet" crossorigin href="./assets/app-B52WcfS1.css">
+    <link rel="stylesheet" crossorigin href="./assets/app-BeeA35dn.css">
   </head>
 
   <body class="auth-pending">
@@ -65,21 +65,22 @@
           <button class="btn btn-primary toggle-btn" aria-label="Media playback tools" title="Media Play">
             <i class="bi bi-music-player-fill"></i><span>Media Play</span>
           </button>
-          <button id="auto-play-toggle" type="button" class="btn btn-light"
+          <button id="auto-play-toggle" type="button" class="btn btn-light" hidden
             aria-label="Start autoplay audio" aria-pressed="false" title="Start autoplay audio">
             <i class="bi bi-play-circle-fill"></i><span>Listen Page</span>
           </button>
-          <button id="auto-play-mode-toggle" type="button" class="btn btn-light page-playback-option"
-            data-mode="next_page"
-            aria-label="Next Page: play all audio then change page"
-            title="Next Page: play all audio then change page">
-            <i class="bi bi-chevron-right"></i><span>After Page</span>
-          </button>
-          <button id="vocabulary-mode-button" type="button" class="btn btn-light"
+          <label class="toolbar-switch-control form-check form-switch page-playback-option"
+            title="Lặp Trang" data-tooltip="Lặp Trang">
+            <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+            <span>Lặp Trang</span>
+            <input id="auto-play-mode-toggle" class="form-check-input" type="checkbox"
+              role="switch" aria-label="Lặp Trang">
+          </label>
+          <button id="vocabulary-mode-button" type="button" class="btn btn-light" hidden
             aria-label="Học từ vựng" title="Học từ vựng" disabled>
             <i class="bi bi-book-open"></i><span>Vocabulary</span>
           </button>
-          <label class="toolbar-switch-control form-check form-switch page-playback-option"
+          <label class="toolbar-switch-control form-check form-switch page-playback-option" hidden
             title="Phát toàn bộ file thay vì chỉ phát đoạn audio của từng icon"
             data-tooltip="Phát toàn bộ file thay vì chỉ phát đoạn audio của từng icon">
             <i class="bi bi-play-btn" aria-hidden="true"></i>
@@ -99,7 +100,7 @@
             title="Hiển thị phần tiếng Việt của subtitle"
             data-tooltip="Hiển thị phần tiếng Việt của subtitle">
             <i class="bi bi-chat-square-text" aria-hidden="true"></i>
-            <span>Subtitle VI</span>
+            <span>Subtitle VN</span>
             <input id="subtitle-show-translation" class="form-check-input" type="checkbox"
               role="switch" aria-label="Hiển thị subtitle Tiếng Việt">
           </label>
@@ -239,8 +240,8 @@
 
     <template id="media-learning-modes-template">
       <div class="acp-learning-modes" role="group" aria-label="Chế độ học">
-        <button id="acp-mode-page" type="button" class="btn btn-sm btn-primary" aria-label="Nghe theo trang" aria-pressed="true">
-          <i class="bi bi-music-player-fill" aria-hidden="true"></i><span>Nghe theo trang</span>
+        <button id="acp-mode-page" type="button" class="btn btn-sm btn-primary" aria-label="Nghe tất cả audio trên trang" aria-pressed="true">
+          <i class="bi bi-music-player-fill" aria-hidden="true"></i><span>Nghe all</span>
         </button>
         <button id="acp-mode-vocabulary" type="button" class="btn btn-sm btn-light" aria-label="Học từ vựng" aria-pressed="false" disabled>
           <i class="bi bi-book-open" aria-hidden="true"></i><span>Học từ vựng</span>

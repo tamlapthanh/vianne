@@ -28,6 +28,7 @@
 .bi-fullscreen-exit { --bi-icon: url("./icons/fullscreen-exit.svg"); }
 .bi-gear { --bi-icon: url("./icons/gear.svg"); }
 .bi-hand-index { --bi-icon: url("./icons/hand-index.svg"); }
+.bi-skip-end-fill { --bi-icon: url("./icons/skip-end-fill.svg"); }
 .bi-list-ol { --bi-icon: url("./icons/list-ol.svg"); }
 .bi-lock-fill { --bi-icon: url("./icons/lock-fill.svg"); }
 .bi-music-player-fill { --bi-icon: url("./icons/music-player-fill.svg"); }

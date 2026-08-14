@@ -1,5 +1,5 @@
 {
-    "default_data_type": "vat_ly_12",
+    "default_data_type": "student47_1",
     "data": [
         {
             "id": "radio_vat_ly_12_book",
@@ -42,12 +42,6 @@
             "data_type": "student47_1",
             "access_key": "grade_4",
             "resource_source": "api",
-            "ASSET_URL": {
-                "IMG_URL": "https://tamlapthanh.github.io/store_images/",
-                "SOUND_URL": "https://tamlapthanh.github.io/store_images/",
-                "VIDEO_URL": "https://tamlapthanh.github.io/store_images/",
-                "JSON_URL": "https://tamlapthanh.github.io/store_images/"
-            },
             "label": "Student book 4 (tập 1)",
             "max": 81,
             "min": 1,
@@ -60,6 +54,7 @@
             "id": "radio_student47_2_book",
             "data_type": "student47_2",
             "access_key": "grade_4",
+            "resource_source": "api",
             "label": "Student book 4 (tập 2)",
             "max": 77,
             "min": 1,
@@ -84,7 +79,7 @@
         {
             "id": "radio_student_37_book",
             "data_type": "student37",
-            "access_key": "grade_3",
+            "access_key": "grade_4",
             "label": "Student book 3",
             "max": 131,
             "min": 1,
@@ -96,7 +91,7 @@
         {
             "id": "radio_work_37_book",
             "data_type": "work37",
-            "access_key": "grade_3",
+            "access_key": "grade_4",
             "label": "Work book 3",
             "max": 96,
             "min": 1,
@@ -108,7 +103,7 @@
         {
             "id": "radio_btbt_37_book",
             "data_type": "btbt37",
-            "access_key": "grade_3",
+            "access_key": "grade_4",
             "label": "BT bổ trợ 3",
             "max": 140,
             "min": 1,
@@ -120,7 +115,7 @@
         {
             "id": "radio_student_book",
             "data_type": "student",
-            "access_key": "grade_2",
+            "access_key": "grade_4",
             "label": "Student book 2",
             "max": 66,
             "min": 1,
@@ -132,7 +127,7 @@
         {
             "id": "radio_work_book",
             "data_type": "work",
-            "access_key": "grade_2",
+            "access_key": "grade_4",
             "label": "Workbook 2",
             "max": 65,
             "min": 1,
@@ -189,31 +184,7 @@
             "dual_page": true,  
             "group": 1
         },
-        {
-            "id": "radio_mind_map_35_subjects",
-            "data_type": "mind_map_35_subjects",
-            "access_key": "mind_map",
-            "label": "Mind map 35 subjects",
-            "max": 35,
-            "min": 1,
-            "current": 1,
-            "fetch": false,
-            "dual_page": true,  
-            "group": 0
-        },            
-        {
-            "id": "radio_first_work_sheet",
-            "data_type": "first_work_sheet",
-            "access_key": "worksheet",
-            "label": "Vocabulary Work Sheet",
-            "max": 14,
-            "min": 1,
-            "current": 1,
-            "fetch": true,
-            "dual_page": false,  
-            "group": 0
-        },
-        {
+             {
             "id": "radio_math",
             "data_type": "math_page",
             "access_key": "math",

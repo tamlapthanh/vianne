@@ -2100,6 +2100,17 @@ select:disabled {
     white-space: nowrap;
 }
 
+#audio-control-panel .acp-learning-modes .btn-light:not(:disabled) {
+    color: #334155;
+    background: #eef2f7;
+    border-color: #d7dee8;
+}
+
+#audio-control-panel .acp-learning-modes .btn-light:not(:disabled):hover {
+    background: #e2e8f0;
+    border-color: #cbd5e1;
+}
+
 body.vocabulary-dialog-open .autoplay-group .page-playback-option {
     display: none !important;
 }
