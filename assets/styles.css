@@ -1446,13 +1446,7 @@ html[data-theme="dark"] .form-check-input:checked + .form-check-label {
     border: 1px solid rgba(251, 146, 60, 0.75);
 }
 
-.toolbar-status #zoom-status.is-default-zoom {
-    color: #1d4ed8;
-    background: rgba(219, 234, 254, 0.92);
-    border: 1px solid rgba(147, 197, 253, 0.7);
-}
-
-.toolbar-status #zoom-status:not(.is-default-zoom) {
+.toolbar-status #zoom-status {
     color: #7c3aed;
     background: rgba(237, 233, 254, 0.94);
     border: 1px solid rgba(196, 181, 253, 0.8);

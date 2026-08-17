@@ -1,6 +1,24 @@
 {
-    "default_data_type": "student47_1",
+    "default_data_type": "tieng_anh_12",
     "data": [
+        {
+            "id": "radio_tieng_anh_12_book",
+            "data_type": "tieng_anh_12",
+            "access_key": "grade_12",
+            "resource_source": "api",
+            "label": "Tiếng Anh 12 (SGK)",
+            "ASSET_URL": {
+                "IMG_URL": "https://tamlapthanh.github.io/khoi/",
+                "SOUND_URL": "https://tamlapthanh.github.io/khoi/",
+                "VIDEO_URL": "https://tamlapthanh.github.io/khoi/"
+            },            
+            "max": 155,
+            "min": 1,
+            "current": 1,
+            "fetch": false,
+            "dual_page": true,  
+            "group": 4
+        },           
         {
             "id": "radio_vat_ly_12_book",
             "data_type": "vat_ly_12",
