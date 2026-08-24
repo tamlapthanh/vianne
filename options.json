@@ -216,7 +216,7 @@
              {
             "id": "radio_math",
             "data_type": "math_page",
-            "access_key": "math",
+            "access_key": "dictionary",
             "label": "Math Game",
             "group": -1
         }
