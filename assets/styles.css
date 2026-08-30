@@ -477,7 +477,7 @@ button:active:not(:disabled),
 
 .vocabulary-dialog-header {
     display: grid;
-    grid-template-columns: 1fr auto auto;
+    grid-template-columns: 1fr auto auto auto;
     align-items: center;
     gap: 14px;
     padding: 14px 18px;
@@ -604,6 +604,23 @@ button:active:not(:disabled),
 }
 #vocabulary-play-button.is-playing { border-color: #22c55e; background: #16a34a; color: #fff; }
 
+#vocabulary-pause-button {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border-color: #c4b5fd;
+    color: #5b21b6;
+    background: #f5f3ff;
+    border-radius: 10px;
+}
+#vocabulary-pause-button i { font-size: 17px; }
+#vocabulary-pause-button:hover,
+#vocabulary-pause-button:focus-visible {
+    border-color: #7c3aed;
+    color: #fff;
+    background: #7c3aed;
+}
+
 html[data-theme="dark"] .vocabulary-dialog {
     border-color: #475569;
     color: #e2e8f0;
@@ -618,6 +635,9 @@ html[data-theme="dark"] .vocabulary-inline-translation { color: #ddd6fe; }
 html[data-theme="dark"] .vocabulary-card-nav { border-color: #64748b; color: #ddd6fe; background: #312e81; }
 html[data-theme="dark"] #vocabulary-previous-page-button { border-color: #3b82f6; color: #bfdbfe; background: #1e3a8a; }
 html[data-theme="dark"] #vocabulary-next-page-button { border-color: #8b5cf6; color: #ddd6fe; background: #4c1d95; }
+html[data-theme="dark"] #vocabulary-pause-button { border-color: #64748b; color: #ddd6fe; background: #312e81; }
+html[data-theme="dark"] #vocabulary-pause-button:hover,
+html[data-theme="dark"] #vocabulary-pause-button:focus-visible { border-color: #8b5cf6; color: #fff; background: #4c1d95; }
 
 @media (min-width: 900px) {
     .vocabulary-dialog {
@@ -1872,9 +1892,6 @@ html[data-theme="dark"] .form-check-input:checked + .form-check-label {
     display: none !important;
 }
 
-body.subtitle-is-visible:not(.vocabulary-dialog-open) .page-navigation {
-    display: none;
-}
 
 /* Buttons positioned on the sides */
 .side-btn {
@@ -2521,6 +2538,10 @@ html[data-theme="dark"] .page-number-link.is-current:disabled {
     }
 
     body.toolbar-is-open .page-navigation {
+        display: none;
+    }
+
+    body.subtitle-is-visible:not(.vocabulary-dialog-open) .page-navigation {
         display: none;
     }
 
