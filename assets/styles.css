@@ -477,9 +477,9 @@ button:active:not(:disabled),
 
 .vocabulary-dialog-header {
     display: grid;
-    grid-template-columns: 1fr auto auto auto;
+    grid-template-columns: 1fr auto auto auto auto auto auto;
     align-items: center;
-    gap: 14px;
+    gap: 10px;
     padding: 14px 18px;
     border-bottom: 1px solid #e2e8f0;
 }
@@ -604,7 +604,8 @@ button:active:not(:disabled),
 }
 #vocabulary-play-button.is-playing { border-color: #22c55e; background: #16a34a; color: #fff; }
 
-#vocabulary-pause-button {
+#vocabulary-pause-button,
+#vocabulary-auto-play-mode {
     width: 34px;
     height: 34px;
     padding: 0;
@@ -613,13 +614,37 @@ button:active:not(:disabled),
     background: #f5f3ff;
     border-radius: 10px;
 }
-#vocabulary-pause-button i { font-size: 17px; }
+#vocabulary-pause-button i,
+#vocabulary-auto-play-mode i { font-size: 17px; }
 #vocabulary-pause-button:hover,
-#vocabulary-pause-button:focus-visible {
+#vocabulary-pause-button:focus-visible,
+#vocabulary-auto-play-mode:hover,
+#vocabulary-auto-play-mode:focus-visible {
     border-color: #7c3aed;
     color: #fff;
     background: #7c3aed;
 }
+
+#vocabulary-subtitle-en,
+#vocabulary-subtitle-vn {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: none;
+    color: #fff;
+    background: #6c757d;
+    opacity: 0.6;
+    border-radius: 10px;
+    transition: opacity 0.15s ease, background 0.15s ease;
+}
+#vocabulary-subtitle-en span,
+#vocabulary-subtitle-vn span { font-size: 10px; font-weight: 800; }
+#vocabulary-subtitle-en:hover,
+#vocabulary-subtitle-en:focus-visible,
+#vocabulary-subtitle-vn:hover,
+#vocabulary-subtitle-vn:focus-visible { opacity: 1; }
+#vocabulary-subtitle-en.is-active { background: #0d6efd; opacity: 1; }
+#vocabulary-subtitle-vn.is-active { background: #16a34a; opacity: 1; }
 
 html[data-theme="dark"] .vocabulary-dialog {
     border-color: #475569;
@@ -635,9 +660,21 @@ html[data-theme="dark"] .vocabulary-inline-translation { color: #ddd6fe; }
 html[data-theme="dark"] .vocabulary-card-nav { border-color: #64748b; color: #ddd6fe; background: #312e81; }
 html[data-theme="dark"] #vocabulary-previous-page-button { border-color: #3b82f6; color: #bfdbfe; background: #1e3a8a; }
 html[data-theme="dark"] #vocabulary-next-page-button { border-color: #8b5cf6; color: #ddd6fe; background: #4c1d95; }
-html[data-theme="dark"] #vocabulary-pause-button { border-color: #64748b; color: #ddd6fe; background: #312e81; }
+html[data-theme="dark"] #vocabulary-pause-button,
+html[data-theme="dark"] #vocabulary-auto-play-mode { border-color: #64748b; color: #ddd6fe; background: #312e81; }
 html[data-theme="dark"] #vocabulary-pause-button:hover,
-html[data-theme="dark"] #vocabulary-pause-button:focus-visible { border-color: #8b5cf6; color: #fff; background: #4c1d95; }
+html[data-theme="dark"] #vocabulary-pause-button:focus-visible,
+html[data-theme="dark"] #vocabulary-auto-play-mode:hover,
+html[data-theme="dark"] #vocabulary-auto-play-mode:focus-visible { border-color: #8b5cf6; color: #fff; background: #4c1d95; }
+
+html[data-theme="dark"] #vocabulary-subtitle-en,
+html[data-theme="dark"] #vocabulary-subtitle-vn { border: none; color: #fff; background: #475569; opacity: 0.6; }
+html[data-theme="dark"] #vocabulary-subtitle-en:hover,
+html[data-theme="dark"] #vocabulary-subtitle-en:focus-visible,
+html[data-theme="dark"] #vocabulary-subtitle-vn:hover,
+html[data-theme="dark"] #vocabulary-subtitle-vn:focus-visible { opacity: 1; }
+html[data-theme="dark"] #vocabulary-subtitle-en.is-active { background: #3b82f6; opacity: 1; }
+html[data-theme="dark"] #vocabulary-subtitle-vn.is-active { background: #22c55e; opacity: 1; }
 
 @media (min-width: 900px) {
     .vocabulary-dialog {
